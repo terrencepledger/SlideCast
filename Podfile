@@ -1,9 +1,9 @@
-platform :ios, '12.0'
+platform :ios, '14.0'
 
 target 'SlidesCast' do
   use_frameworks!
 
-  # Pods for SlidesCast
+  pod 'google-cast-sdk', '~> 4.8.1'
 
   target 'SlidesCastTests' do
     inherit! :search_paths

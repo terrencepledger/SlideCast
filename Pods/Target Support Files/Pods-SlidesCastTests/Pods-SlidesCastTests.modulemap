@@ -1,0 +1,6 @@
+framework module Pods_SlidesCastTests {
+  umbrella header "Pods-SlidesCastTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-SlidesCast/Pods-SlidesCast-resources.sh
+${PODS_ROOT}/google-cast-sdk/Resources/GoogleCastCoreResources.bundle
+${PODS_ROOT}/google-cast-sdk/Resources/GoogleCastUIResources.bundle
+${PODS_ROOT}/google-cast-sdk/Resources/MaterialDialogs.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/google-cast-sdk/GoogleCast.bundle
