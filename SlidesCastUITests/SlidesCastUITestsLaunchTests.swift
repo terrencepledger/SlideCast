@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class SlideCastUITestsLaunchTests: XCTestCase {
+final class SlidesCastUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

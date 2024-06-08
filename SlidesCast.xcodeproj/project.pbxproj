@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76A99C9E2C14BE870024C791 /* SlideCastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99C9D2C14BE870024C791 /* SlideCastApp.swift */; };
-		76A99CA02C14BE870024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99C9F2C14BE870024C791 /* ContentView.swift */; };
-		76A99CA22C14BE870024C791 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CA12C14BE870024C791 /* Item.swift */; };
-		76A99CA42C14BE8A0024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CA32C14BE8A0024C791 /* Assets.xcassets */; };
-		76A99CA82C14BE8A0024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CA72C14BE8A0024C791 /* Preview Assets.xcassets */; };
-		76A99CB22C14BE8B0024C791 /* SlideCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CB12C14BE8B0024C791 /* SlideCastTests.swift */; };
-		76A99CBC2C14BE8B0024C791 /* SlideCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CBB2C14BE8B0024C791 /* SlideCastUITests.swift */; };
-		76A99CBE2C14BE8B0024C791 /* SlideCastUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CBD2C14BE8B0024C791 /* SlideCastUITestsLaunchTests.swift */; };
+		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
+		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
+		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
+		76A99CDA2C14CA900024C791 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCE2C14CA900024C791 /* Item.swift */; };
+		76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD02C14CA900024C791 /* SlidesCastApp.swift */; };
+		76A99CDF2C14CB680024C791 /* SlidesCastUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD52C14CA900024C791 /* SlidesCastUITestsLaunchTests.swift */; };
+		76A99CE02C14CB740024C791 /* SlidesCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD42C14CA900024C791 /* SlidesCastUITests.swift */; };
+		76A99CE12C14CB7A0024C791 /* SlidesCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD22C14CA900024C791 /* SlidesCastTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +35,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		76A99C9A2C14BE870024C791 /* SlideCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		76A99C9D2C14BE870024C791 /* SlideCastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCastApp.swift; sourceTree = "<group>"; };
-		76A99C9F2C14BE870024C791 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		76A99CA12C14BE870024C791 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		76A99CA32C14BE8A0024C791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		76A99CA52C14BE8A0024C791 /* SlideCast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlideCast.entitlements; sourceTree = "<group>"; };
-		76A99CA72C14BE8A0024C791 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		76A99CAD2C14BE8B0024C791 /* SlideCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		76A99CB12C14BE8B0024C791 /* SlideCastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCastTests.swift; sourceTree = "<group>"; };
-		76A99CB72C14BE8B0024C791 /* SlideCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		76A99CBB2C14BE8B0024C791 /* SlideCastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCastUITests.swift; sourceTree = "<group>"; };
-		76A99CBD2C14BE8B0024C791 /* SlideCastUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCastUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76A99C9A2C14BE870024C791 /* SlidesCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidesCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		76A99CCC2C14CA900024C791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76A99CCD2C14CA900024C791 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		76A99CCE2C14CA900024C791 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		76A99CCF2C14CA900024C791 /* SlidesCast.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SlidesCast.entitlements; sourceTree = "<group>"; };
+		76A99CD02C14CA900024C791 /* SlidesCastApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastApp.swift; sourceTree = "<group>"; };
+		76A99CD22C14CA900024C791 /* SlidesCastTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastTests.swift; sourceTree = "<group>"; };
+		76A99CD42C14CA900024C791 /* SlidesCastUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastUITests.swift; sourceTree = "<group>"; };
+		76A99CD52C14CA900024C791 /* SlidesCastUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +77,9 @@
 		76A99C912C14BE870024C791 = {
 			isa = PBXGroup;
 			children = (
-				76A99C9C2C14BE870024C791 /* SlideCast */,
-				76A99CB02C14BE8B0024C791 /* SlideCastTests */,
-				76A99CBA2C14BE8B0024C791 /* SlideCastUITests */,
+				76A99CD12C14CA900024C791 /* SlidesCast */,
+				76A99CD32C14CA900024C791 /* SlidesCastTests */,
+				76A99CD62C14CA900024C791 /* SlidesCastUITests */,
 				76A99C9B2C14BE870024C791 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,57 +87,57 @@
 		76A99C9B2C14BE870024C791 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				76A99C9A2C14BE870024C791 /* SlideCast.app */,
-				76A99CAD2C14BE8B0024C791 /* SlideCastTests.xctest */,
-				76A99CB72C14BE8B0024C791 /* SlideCastUITests.xctest */,
+				76A99C9A2C14BE870024C791 /* SlidesCast.app */,
+				76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */,
+				76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		76A99C9C2C14BE870024C791 /* SlideCast */ = {
+		76A99CCB2C14CA900024C791 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				76A99C9D2C14BE870024C791 /* SlideCastApp.swift */,
-				76A99C9F2C14BE870024C791 /* ContentView.swift */,
-				76A99CA12C14BE870024C791 /* Item.swift */,
-				76A99CA32C14BE8A0024C791 /* Assets.xcassets */,
-				76A99CA52C14BE8A0024C791 /* SlideCast.entitlements */,
-				76A99CA62C14BE8A0024C791 /* Preview Content */,
-			);
-			path = SlideCast;
-			sourceTree = "<group>";
-		};
-		76A99CA62C14BE8A0024C791 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				76A99CA72C14BE8A0024C791 /* Preview Assets.xcassets */,
+				76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		76A99CB02C14BE8B0024C791 /* SlideCastTests */ = {
+		76A99CD12C14CA900024C791 /* SlidesCast */ = {
 			isa = PBXGroup;
 			children = (
-				76A99CB12C14BE8B0024C791 /* SlideCastTests.swift */,
+				76A99CCB2C14CA900024C791 /* Preview Content */,
+				76A99CCC2C14CA900024C791 /* Assets.xcassets */,
+				76A99CCD2C14CA900024C791 /* ContentView.swift */,
+				76A99CCE2C14CA900024C791 /* Item.swift */,
+				76A99CCF2C14CA900024C791 /* SlidesCast.entitlements */,
+				76A99CD02C14CA900024C791 /* SlidesCastApp.swift */,
 			);
-			path = SlideCastTests;
+			path = SlidesCast;
 			sourceTree = "<group>";
 		};
-		76A99CBA2C14BE8B0024C791 /* SlideCastUITests */ = {
+		76A99CD32C14CA900024C791 /* SlidesCastTests */ = {
 			isa = PBXGroup;
 			children = (
-				76A99CBB2C14BE8B0024C791 /* SlideCastUITests.swift */,
-				76A99CBD2C14BE8B0024C791 /* SlideCastUITestsLaunchTests.swift */,
+				76A99CD22C14CA900024C791 /* SlidesCastTests.swift */,
 			);
-			path = SlideCastUITests;
+			path = SlidesCastTests;
+			sourceTree = "<group>";
+		};
+		76A99CD62C14CA900024C791 /* SlidesCastUITests */ = {
+			isa = PBXGroup;
+			children = (
+				76A99CD42C14CA900024C791 /* SlidesCastUITests.swift */,
+				76A99CD52C14CA900024C791 /* SlidesCastUITestsLaunchTests.swift */,
+			);
+			path = SlidesCastUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		76A99C992C14BE870024C791 /* SlideCast */ = {
+		76A99C992C14BE870024C791 /* SlidesCast */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76A99CC12C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlideCast" */;
+			buildConfigurationList = 76A99CC12C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlidesCast" */;
 			buildPhases = (
 				76A99C962C14BE870024C791 /* Sources */,
 				76A99C972C14BE870024C791 /* Frameworks */,
@@ -147,14 +147,14 @@
 			);
 			dependencies = (
 			);
-			name = SlideCast;
+			name = SlidesCast;
 			productName = SlideCast;
-			productReference = 76A99C9A2C14BE870024C791 /* SlideCast.app */;
+			productReference = 76A99C9A2C14BE870024C791 /* SlidesCast.app */;
 			productType = "com.apple.product-type.application";
 		};
-		76A99CAC2C14BE8B0024C791 /* SlideCastTests */ = {
+		76A99CAC2C14BE8B0024C791 /* SlidesCastTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76A99CC42C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlideCastTests" */;
+			buildConfigurationList = 76A99CC42C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlidesCastTests" */;
 			buildPhases = (
 				76A99CA92C14BE8B0024C791 /* Sources */,
 				76A99CAA2C14BE8B0024C791 /* Frameworks */,
@@ -165,14 +165,14 @@
 			dependencies = (
 				76A99CAF2C14BE8B0024C791 /* PBXTargetDependency */,
 			);
-			name = SlideCastTests;
+			name = SlidesCastTests;
 			productName = SlideCastTests;
-			productReference = 76A99CAD2C14BE8B0024C791 /* SlideCastTests.xctest */;
+			productReference = 76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		76A99CB62C14BE8B0024C791 /* SlideCastUITests */ = {
+		76A99CB62C14BE8B0024C791 /* SlidesCastUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76A99CC72C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlideCastUITests" */;
+			buildConfigurationList = 76A99CC72C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlidesCastUITests" */;
 			buildPhases = (
 				76A99CB32C14BE8B0024C791 /* Sources */,
 				76A99CB42C14BE8B0024C791 /* Frameworks */,
@@ -183,9 +183,9 @@
 			dependencies = (
 				76A99CB92C14BE8B0024C791 /* PBXTargetDependency */,
 			);
-			name = SlideCastUITests;
+			name = SlidesCastUITests;
 			productName = SlideCastUITests;
-			productReference = 76A99CB72C14BE8B0024C791 /* SlideCastUITests.xctest */;
+			productReference = 76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +211,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76A99C952C14BE870024C791 /* Build configuration list for PBXProject "SlideCast" */;
+			buildConfigurationList = 76A99C952C14BE870024C791 /* Build configuration list for PBXProject "SlidesCast" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -224,9 +224,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				76A99C992C14BE870024C791 /* SlideCast */,
-				76A99CAC2C14BE8B0024C791 /* SlideCastTests */,
-				76A99CB62C14BE8B0024C791 /* SlideCastUITests */,
+				76A99C992C14BE870024C791 /* SlidesCast */,
+				76A99CAC2C14BE8B0024C791 /* SlidesCastTests */,
+				76A99CB62C14BE8B0024C791 /* SlidesCastUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,8 +236,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76A99CA82C14BE8A0024C791 /* Preview Assets.xcassets in Resources */,
-				76A99CA42C14BE8A0024C791 /* Assets.xcassets in Resources */,
+				76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */,
+				76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76A99CA02C14BE870024C791 /* ContentView.swift in Sources */,
-				76A99CA22C14BE870024C791 /* Item.swift in Sources */,
-				76A99C9E2C14BE870024C791 /* SlideCastApp.swift in Sources */,
+				76A99CDA2C14CA900024C791 /* Item.swift in Sources */,
+				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
+				76A99CD92C14CA900024C791 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76A99CB22C14BE8B0024C791 /* SlideCastTests.swift in Sources */,
+				76A99CE12C14CB7A0024C791 /* SlidesCastTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76A99CBC2C14BE8B0024C791 /* SlideCastUITests.swift in Sources */,
-				76A99CBE2C14BE8B0024C791 /* SlideCastUITestsLaunchTests.swift in Sources */,
+				76A99CE02C14CB740024C791 /* SlidesCastUITests.swift in Sources */,
+				76A99CDF2C14CB680024C791 /* SlidesCastUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +290,12 @@
 /* Begin PBXTargetDependency section */
 		76A99CAF2C14BE8B0024C791 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 76A99C992C14BE870024C791 /* SlideCast */;
+			target = 76A99C992C14BE870024C791 /* SlidesCast */;
 			targetProxy = 76A99CAE2C14BE8B0024C791 /* PBXContainerItemProxy */;
 		};
 		76A99CB92C14BE8B0024C791 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 76A99C992C14BE870024C791 /* SlideCast */;
+			target = 76A99C992C14BE870024C791 /* SlidesCast */;
 			targetProxy = 76A99CB82C14BE8B0024C791 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -420,10 +420,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SlideCast/SlideCast.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SlidesCast/SlidesCast.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SlideCast/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlidesCast/Preview Content\"";
 				DEVELOPMENT_TEAM = T94353JL44;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -443,8 +444,9 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlideCast;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -458,10 +460,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SlideCast/SlideCast.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SlidesCast/SlidesCast.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SlideCast/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlidesCast/Preview Content\"";
 				DEVELOPMENT_TEAM = T94353JL44;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -481,8 +484,9 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlideCast;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -503,14 +507,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlideCastTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCastTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideCast.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SlideCast";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlidesCast.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SlidesCast";
 			};
 			name = Debug;
 		};
@@ -526,14 +530,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlideCastTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCastTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideCast.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SlideCast";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlidesCast.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SlidesCast";
 			};
 			name = Release;
 		};
@@ -548,7 +552,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlideCastUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCastUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -570,7 +574,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlideCastUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCastUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -584,7 +588,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76A99C952C14BE870024C791 /* Build configuration list for PBXProject "SlideCast" */ = {
+		76A99C952C14BE870024C791 /* Build configuration list for PBXProject "SlidesCast" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76A99CBF2C14BE8B0024C791 /* Debug */,
@@ -593,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		76A99CC12C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlideCast" */ = {
+		76A99CC12C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlidesCast" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76A99CC22C14BE8B0024C791 /* Debug */,
@@ -602,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		76A99CC42C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlideCastTests" */ = {
+		76A99CC42C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlidesCastTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76A99CC52C14BE8B0024C791 /* Debug */,
@@ -611,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		76A99CC72C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlideCastUITests" */ = {
+		76A99CC72C14BE8B0024C791 /* Build configuration list for PBXNativeTarget "SlidesCastUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76A99CC82C14BE8B0024C791 /* Debug */,

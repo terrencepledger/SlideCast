@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct SlideCastApp: App {
+struct SlidesCastApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
