@@ -11,11 +11,11 @@
 		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
 		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
 		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
-		76A99CDA2C14CA900024C791 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCE2C14CA900024C791 /* Item.swift */; };
 		76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD02C14CA900024C791 /* SlidesCastApp.swift */; };
 		76A99CDF2C14CB680024C791 /* SlidesCastUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD52C14CA900024C791 /* SlidesCastUITestsLaunchTests.swift */; };
 		76A99CE02C14CB740024C791 /* SlidesCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD42C14CA900024C791 /* SlidesCastUITests.swift */; };
 		76A99CE12C14CB7A0024C791 /* SlidesCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD22C14CA900024C791 /* SlidesCastTests.swift */; };
+		76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9753A2C15455600C2FDE3 /* CastButton.swift */; };
 		B2DB23E889FD96EF465DB037 /* Pods_SlidesCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042638890EED9C9601FE503D /* Pods_SlidesCastTests.framework */; };
 		D73E56C53F85C709C767DC2E /* Pods_SlidesCast_SlidesCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7BEA0FA449A9F08B33C3BA /* Pods_SlidesCast_SlidesCastUITests.framework */; };
 /* End PBXBuildFile section */
@@ -50,12 +50,13 @@
 		76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76A99CCC2C14CA900024C791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76A99CCD2C14CA900024C791 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		76A99CCE2C14CA900024C791 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		76A99CCF2C14CA900024C791 /* SlidesCast.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SlidesCast.entitlements; sourceTree = "<group>"; };
 		76A99CD02C14CA900024C791 /* SlidesCastApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastApp.swift; sourceTree = "<group>"; };
 		76A99CD22C14CA900024C791 /* SlidesCastTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastTests.swift; sourceTree = "<group>"; };
 		76A99CD42C14CA900024C791 /* SlidesCastUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastUITests.swift; sourceTree = "<group>"; };
 		76A99CD52C14CA900024C791 /* SlidesCastUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76D9753A2C15455600C2FDE3 /* CastButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastButton.swift; sourceTree = "<group>"; };
+		76D9753C2C156C9F00C2FDE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9E00F761D7FDD136D6EDDD26 /* Pods-SlidesCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCastTests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCastTests/Pods-SlidesCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C74927B93939E3C936E8FE49 /* Pods-SlidesCast-SlidesCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAFA9E385AB68900A75452DE /* Pods-SlidesCast-SlidesCastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,11 +146,10 @@
 		76A99CD12C14CA900024C791 /* SlidesCast */ = {
 			isa = PBXGroup;
 			children = (
-				76A99CCB2C14CA900024C791 /* Preview Content */,
-				76A99CCC2C14CA900024C791 /* Assets.xcassets */,
-				76A99CCD2C14CA900024C791 /* ContentView.swift */,
-				76A99CCE2C14CA900024C791 /* Item.swift */,
-				76A99CCF2C14CA900024C791 /* SlidesCast.entitlements */,
+				76D9753C2C156C9F00C2FDE3 /* Info.plist */,
+				76D975392C153E2900C2FDE3 /* Resources */,
+				76D975382C153E1C00C2FDE3 /* Models */,
+				76D975372C15286900C2FDE3 /* Views */,
 				76A99CD02C14CA900024C791 /* SlidesCastApp.swift */,
 			);
 			path = SlidesCast;
@@ -170,6 +170,32 @@
 				76A99CD52C14CA900024C791 /* SlidesCastUITestsLaunchTests.swift */,
 			);
 			path = SlidesCastUITests;
+			sourceTree = "<group>";
+		};
+		76D975372C15286900C2FDE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76A99CCD2C14CA900024C791 /* ContentView.swift */,
+				76D9753A2C15455600C2FDE3 /* CastButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		76D975382C153E1C00C2FDE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		76D975392C153E2900C2FDE3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				76A99CCB2C14CA900024C791 /* Preview Content */,
+				76A99CCC2C14CA900024C791 /* Assets.xcassets */,
+				76A99CCF2C14CA900024C791 /* SlidesCast.entitlements */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,8 +472,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76A99CDA2C14CA900024C791 /* Item.swift in Sources */,
 				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
+				76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */,
 				76A99CD92C14CA900024C791 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,15 +635,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SlidesCast/SlidesCast.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SlidesCast/Resources/SlidesCast.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SlidesCast/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlidesCast/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = T94353JL44;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SlidesCast/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -651,15 +678,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SlidesCast/SlidesCast.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SlidesCast/Resources/SlidesCast.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SlidesCast/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlidesCast/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = T94353JL44;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SlidesCast/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

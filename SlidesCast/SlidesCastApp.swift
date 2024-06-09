@@ -7,26 +7,33 @@
 
 import SwiftUI
 import SwiftData
+import GoogleCast
 
 @main
 struct SlidesCastApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @UIApplicationDelegateAdaptor(SlidesCastAppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
+    }
+}
+
+class SlidesCastAppDelegate: NSObject, UIApplicationDelegate, GCKLoggerDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        let kReceiverAppID = kGCKDefaultMediaReceiverApplicationID
+
+        let criteria = GCKDiscoveryCriteria(applicationID: kReceiverAppID)
+        let options = GCKCastOptions(discoveryCriteria: criteria)
+        GCKCastContext.setSharedInstanceWith(options)
+
+        GCKLogger.sharedInstance().delegate = self
+
+        return true
+    }
+
+    func logMessage(_ message: String, at level: GCKLoggerLevel, fromFunction function: String, location: String) {
+        print("Cast Log: \(level) - \(message) [\(function) - \(location)]")
     }
 }
