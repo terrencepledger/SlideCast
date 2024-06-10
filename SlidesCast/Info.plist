@@ -4,8 +4,8 @@
 <dict>
 	<key>NSBonjourServices</key>
 	<array>
+		<string>300B052F._googlecast._tcp</string>
 		<string>_googlecast._tcp</string>
-		<string>_300B052F._googlecast._tcp</string>
 	</array>
 </dict>
 </plist>
