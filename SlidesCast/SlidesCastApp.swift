@@ -22,7 +22,7 @@ struct SlidesCastApp: App {
 
 class SlidesCastAppDelegate: NSObject, UIApplicationDelegate, GCKLoggerDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        let kReceiverAppID = kGCKDefaultMediaReceiverApplicationID
+        let kReceiverAppID = "300B052F"
 
         let criteria = GCKDiscoveryCriteria(applicationID: kReceiverAppID)
         let options = GCKCastOptions(discoveryCriteria: criteria)
