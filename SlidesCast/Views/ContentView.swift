@@ -7,16 +7,22 @@
 
 import SwiftUI
 import SwiftData
+import GoogleCast
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    let castButton = CastButton()
 
     var body: some View {
         NavigationView {
             PhotoGalleryView()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    CastButton()
+                    castButton
+                        .onAppear {
+                            GCKCastContext.sharedInstance()
+                                .presentCastInstructionsViewControllerOnce(with: castButton.button)
+                        }
                 }
             }
         }

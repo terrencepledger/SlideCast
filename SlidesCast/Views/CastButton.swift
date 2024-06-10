@@ -9,10 +9,10 @@ import SwiftUI
 import GoogleCast
 
 struct CastButton: UIViewRepresentable {
+    public let button = GCKUICastButton(frame: CGRect(origin: .zero, size: CGSize(width: 24, height: 24)))
+
     func makeUIView(context: Context) -> GCKUICastButton {
-        let castButton = GCKUICastButton(frame: CGRect(origin: .zero, size: CGSize(width: 24, height: 24)))
-        castButton.tintColor = UIColor.gray
-        return castButton
+        return button
     }
 
     func updateUIView(_ uiView: GCKUICastButton, context: Context) {
