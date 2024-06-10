@@ -13,12 +13,12 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            Text("Placeholder")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    CastButton()
+            PhotoGalleryView()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        CastButton()
+                    }
                 }
-            }
         }
     }
 }

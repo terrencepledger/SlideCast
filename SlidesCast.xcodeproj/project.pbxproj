@@ -16,6 +16,8 @@
 		76A99CE02C14CB740024C791 /* SlidesCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD42C14CA900024C791 /* SlidesCastUITests.swift */; };
 		76A99CE12C14CB7A0024C791 /* SlidesCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD22C14CA900024C791 /* SlidesCastTests.swift */; };
 		76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9753A2C15455600C2FDE3 /* CastButton.swift */; };
+		76D9753F2C168BFA00C2FDE3 /* PhotoLibraryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9753E2C168BFA00C2FDE3 /* PhotoLibraryVM.swift */; };
+		76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */; };
 		B2DB23E889FD96EF465DB037 /* Pods_SlidesCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042638890EED9C9601FE503D /* Pods_SlidesCastTests.framework */; };
 		D73E56C53F85C709C767DC2E /* Pods_SlidesCast_SlidesCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7BEA0FA449A9F08B33C3BA /* Pods_SlidesCast_SlidesCastUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		76A99CD52C14CA900024C791 /* SlidesCastUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesCastUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76D9753A2C15455600C2FDE3 /* CastButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastButton.swift; sourceTree = "<group>"; };
 		76D9753C2C156C9F00C2FDE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		76D9753E2C168BFA00C2FDE3 /* PhotoLibraryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVM.swift; sourceTree = "<group>"; };
+		76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryView.swift; sourceTree = "<group>"; };
 		9E00F761D7FDD136D6EDDD26 /* Pods-SlidesCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCastTests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCastTests/Pods-SlidesCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C74927B93939E3C936E8FE49 /* Pods-SlidesCast-SlidesCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAFA9E385AB68900A75452DE /* Pods-SlidesCast-SlidesCastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				76D9753C2C156C9F00C2FDE3 /* Info.plist */,
 				76D975392C153E2900C2FDE3 /* Resources */,
 				76D975382C153E1C00C2FDE3 /* Models */,
+				76D9753D2C168BC900C2FDE3 /* ViewModels */,
 				76D975372C15286900C2FDE3 /* Views */,
 				76A99CD02C14CA900024C791 /* SlidesCastApp.swift */,
 			);
@@ -177,6 +182,7 @@
 			children = (
 				76A99CCD2C14CA900024C791 /* ContentView.swift */,
 				76D9753A2C15455600C2FDE3 /* CastButton.swift */,
+				76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +202,14 @@
 				76A99CCF2C14CA900024C791 /* SlidesCast.entitlements */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		76D9753D2C168BC900C2FDE3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				76D9753E2C168BFA00C2FDE3 /* PhotoLibraryVM.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +487,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
+				76D9753F2C168BFA00C2FDE3 /* PhotoLibraryVM.swift in Sources */,
+				76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */,
 				76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */,
 				76A99CD92C14CA900024C791 /* ContentView.swift in Sources */,
 			);
