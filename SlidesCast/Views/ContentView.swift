@@ -14,11 +14,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             PhotoGalleryView()
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        CastButton()
-                    }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    CastButton()
                 }
+            }
         }
     }
 }
