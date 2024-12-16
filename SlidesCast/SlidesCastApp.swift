@@ -22,12 +22,10 @@ struct SlidesCastApp: App {
 
 class SlidesCastAppDelegate: NSObject, UIApplicationDelegate, GCKLoggerDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        let kReceiverAppID = "300B052F"
-
-        let criteria = GCKDiscoveryCriteria(applicationID: kReceiverAppID)
+        let criteria = GCKDiscoveryCriteria(applicationID: kGCKDefaultMediaReceiverApplicationID)
         let options = GCKCastOptions(discoveryCriteria: criteria)
+        
         GCKCastContext.setSharedInstanceWith(options)
-
         GCKLogger.sharedInstance().delegate = self
 
         return true
