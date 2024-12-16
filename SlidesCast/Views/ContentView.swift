@@ -16,15 +16,15 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             PhotoGalleryView()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    castButton
-                        .onAppear {
-                            GCKCastContext.sharedInstance()
-                                .presentCastInstructionsViewControllerOnce(with: castButton.button)
-                        }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        castButton
+                            .onAppear {
+                                GCKCastContext.sharedInstance()
+                                    .presentCastInstructionsViewControllerOnce(with: castButton.button)
+                            }
+                    }
                 }
-            }
         }
     }
 }
