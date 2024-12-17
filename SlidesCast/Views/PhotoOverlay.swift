@@ -1,5 +1,5 @@
 //
-//  PhotoDetailView.swift
+//  PhotoOverlay.swift
 //  SlidesCast
 //
 //  Created by Terrence Pledger on 6/9/24.
@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 import GoogleCast
 
-struct PhotoDetailView: View {
+struct PhotoOverlay: View {
     @Binding var isShowing: Bool
-    var scImage: SCImage
+    var imgDetails: ImageDetails
 
     var body: some View {
        VStack {
-           Image(uiImage: scImage.image)
+           Image(uiImage: imgDetails.image)
                .resizable()
                .scaledToFit()
            Button("Close") {
@@ -23,6 +23,7 @@ struct PhotoDetailView: View {
            }
            .padding()
        } .onAppear {
+           print(imgDetails.filename)
            if let session = GCKCastContext.sharedInstance().sessionManager.currentSession, session.connectionState == .connected {
                saveImageToTempDirectory()
            }
@@ -39,7 +40,7 @@ struct PhotoDetailView: View {
             print("unable to retrieve local server address")
             return
         }
-        guard let photoURL = URL(string: serverURL + "/images/" + scImage.filename) else {
+        guard let photoURL = URL(string: serverURL + "/images/" + imgDetails.filename) else {
             print("Failed to create URL")
             return
         }
@@ -68,8 +69,8 @@ struct PhotoDetailView: View {
         let tempDirectory = FileManager.default.temporaryDirectory
         let imagesDirectory = tempDirectory.appendingPathComponent("images")
         
-        if let imageData = scImage.image.jpegData(compressionQuality: 1.0) {
-            let imagePath = imagesDirectory.appendingPathComponent(scImage.filename)
+        if let imageData = imgDetails.image.jpegData(compressionQuality: 1.0) {
+            let imagePath = imagesDirectory.appendingPathComponent(imgDetails.filename)
             
             // Write the image to the Temporary directory
             do {

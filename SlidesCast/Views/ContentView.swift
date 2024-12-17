@@ -15,7 +15,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            PhotoGalleryView()
+            PhotoGallery()
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         castButton
