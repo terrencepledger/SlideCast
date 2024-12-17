@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5F0FD3B3163956D2BDDEE0F0 /* Pods_SlidesCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616F4208A1693699F6812707 /* Pods_SlidesCast.framework */; };
+		762467692D10AC7100E531BD /* LocalServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762467682D10AC6B00E531BD /* LocalServer.swift */; };
+		7624676C2D10B68F00E531BD /* GCDWebServer in Frameworks */ = {isa = PBXBuildFile; productRef = 7624676B2D10B68F00E531BD /* GCDWebServer */; };
 		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
 		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
 		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
@@ -47,6 +49,7 @@
 		4E7BEA0FA449A9F08B33C3BA /* Pods_SlidesCast_SlidesCastUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidesCast_SlidesCastUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		616F4208A1693699F6812707 /* Pods_SlidesCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidesCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F6572582DD9C401D0809C9 /* Pods-SlidesCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCast/Pods-SlidesCast.debug.xcconfig"; sourceTree = "<group>"; };
+		762467682D10AC6B00E531BD /* LocalServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServer.swift; sourceTree = "<group>"; };
 		76A99C9A2C14BE870024C791 /* SlidesCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidesCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +123,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		762467672D10AC2800E531BD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				762467682D10AC6B00E531BD /* LocalServer.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		76A99C912C14BE870024C791 = {
 			isa = PBXGroup;
 			children = (
@@ -154,11 +165,12 @@
 			isa = PBXGroup;
 			children = (
 				76D9753C2C156C9F00C2FDE3 /* Info.plist */,
+				76A99CD02C14CA900024C791 /* SlidesCastApp.swift */,
 				76D975392C153E2900C2FDE3 /* Resources */,
 				76D975382C153E1C00C2FDE3 /* Models */,
 				76D9753D2C168BC900C2FDE3 /* ViewModels */,
 				76D975372C15286900C2FDE3 /* Views */,
-				76A99CD02C14CA900024C791 /* SlidesCastApp.swift */,
+				762467672D10AC2800E531BD /* Utilities */,
 			);
 			path = SlidesCast;
 			sourceTree = "<group>";
@@ -499,6 +511,7 @@
 				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
 				76D9753F2C168BFA00C2FDE3 /* PhotoLibraryVM.swift in Sources */,
 				76D975432C1693D900C2FDE3 /* PhotoDetailView.swift in Sources */,
+				762467692D10AC7100E531BD /* LocalServer.swift in Sources */,
 				76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */,
 				76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */,
 				76A99CD92C14CA900024C791 /* ContentView.swift in Sources */,
