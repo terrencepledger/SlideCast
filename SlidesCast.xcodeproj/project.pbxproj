@@ -21,6 +21,7 @@
 		76D9753F2C168BFA00C2FDE3 /* PhotoLibraryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9753E2C168BFA00C2FDE3 /* PhotoLibraryVM.swift */; };
 		76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */; };
 		76D975432C1693D900C2FDE3 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D975422C1693D900C2FDE3 /* PhotoDetailView.swift */; };
+		76F0682E2D114EA200C64AC4 /* SCImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0682D2D114E9F00C64AC4 /* SCImage.swift */; };
 		B2DB23E889FD96EF465DB037 /* Pods_SlidesCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042638890EED9C9601FE503D /* Pods_SlidesCastTests.framework */; };
 		D73E56C53F85C709C767DC2E /* Pods_SlidesCast_SlidesCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7BEA0FA449A9F08B33C3BA /* Pods_SlidesCast_SlidesCastUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		76D9753E2C168BFA00C2FDE3 /* PhotoLibraryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVM.swift; sourceTree = "<group>"; };
 		76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryView.swift; sourceTree = "<group>"; };
 		76D975422C1693D900C2FDE3 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		76F0682D2D114E9F00C64AC4 /* SCImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCImage.swift; sourceTree = "<group>"; };
 		9E00F761D7FDD136D6EDDD26 /* Pods-SlidesCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCastTests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCastTests/Pods-SlidesCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C74927B93939E3C936E8FE49 /* Pods-SlidesCast-SlidesCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAFA9E385AB68900A75452DE /* Pods-SlidesCast-SlidesCastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		76D975382C153E1C00C2FDE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76F0682D2D114E9F00C64AC4 /* SCImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
+				76F0682E2D114EA200C64AC4 /* SCImage.swift in Sources */,
 				76D9753F2C168BFA00C2FDE3 /* PhotoLibraryVM.swift in Sources */,
 				76D975432C1693D900C2FDE3 /* PhotoDetailView.swift in Sources */,
 				762467692D10AC7100E531BD /* LocalServer.swift in Sources */,
