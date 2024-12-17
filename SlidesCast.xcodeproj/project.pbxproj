@@ -24,6 +24,7 @@
 		76F0682E2D114EA200C64AC4 /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0682D2D114E9F00C64AC4 /* ImageDetails.swift */; };
 		76F068322D11EEDA00C64AC4 /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F068312D11EED600C64AC4 /* GalleryImage.swift */; };
 		76F068342D11EF4400C64AC4 /* GalleryCheckmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F068332D11EF3C00C64AC4 /* GalleryCheckmark.swift */; };
+		76F068362D1218D700C64AC4 /* CastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F068352D1218CC00C64AC4 /* CastManager.swift */; };
 		B2DB23E889FD96EF465DB037 /* Pods_SlidesCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042638890EED9C9601FE503D /* Pods_SlidesCastTests.framework */; };
 		D73E56C53F85C709C767DC2E /* Pods_SlidesCast_SlidesCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7BEA0FA449A9F08B33C3BA /* Pods_SlidesCast_SlidesCastUITests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		76F0682D2D114E9F00C64AC4 /* ImageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
 		76F068312D11EED600C64AC4 /* GalleryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImage.swift; sourceTree = "<group>"; };
 		76F068332D11EF3C00C64AC4 /* GalleryCheckmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCheckmark.swift; sourceTree = "<group>"; };
+		76F068352D1218CC00C64AC4 /* CastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastManager.swift; sourceTree = "<group>"; };
 		9E00F761D7FDD136D6EDDD26 /* Pods-SlidesCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCastTests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCastTests/Pods-SlidesCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C74927B93939E3C936E8FE49 /* Pods-SlidesCast-SlidesCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAFA9E385AB68900A75452DE /* Pods-SlidesCast-SlidesCastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		762467672D10AC2800E531BD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				76F068352D1218CC00C64AC4 /* CastManager.swift */,
 				762467682D10AC6B00E531BD /* LocalServer.swift */,
 			);
 			path = Utilities;
@@ -524,6 +527,7 @@
 				76D975432C1693D900C2FDE3 /* PhotoOverlay.swift in Sources */,
 				762467692D10AC7100E531BD /* LocalServer.swift in Sources */,
 				76F068322D11EEDA00C64AC4 /* GalleryImage.swift in Sources */,
+				76F068362D1218D700C64AC4 /* CastManager.swift in Sources */,
 				76D975412C168C8D00C2FDE3 /* PhotoGallery.swift in Sources */,
 				76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */,
 				76A99CD92C14CA900024C791 /* ContentView.swift in Sources */,
