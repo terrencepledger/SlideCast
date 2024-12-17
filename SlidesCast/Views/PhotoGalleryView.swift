@@ -10,19 +10,19 @@ import SwiftUI
 struct PhotoGalleryView: View {
     @ObservedObject var viewModel = PhotoLibraryVM()
     @State private var showingDetail = false
-    @State private var selectedImage: UIImage?
+    @State private var selectedImage: SCImage?
     
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]) {
-                    ForEach(viewModel.images.indices, id: \.self) { index in
-                        let img = viewModel.images[index]
+                    ForEach(viewModel.scImages.indices, id: \.self) { index in
+                        let current = viewModel.scImages[index]
                         Button(action: {
-                            self.selectedImage = img
+                            self.selectedImage = current
                             self.showingDetail = true
                         }) {
-                            Image(uiImage: img)
+                            Image(uiImage: current.image)
                                 .resizable()
                                 .scaledToFit()
                                 .padding(2)
@@ -50,7 +50,7 @@ struct PhotoGalleryView: View {
             .overlay(
                 Group {
                     if showingDetail, let selectedImage = selectedImage {
-                        PhotoDetailView(image: selectedImage, isShowing: $showingDetail)
+                        PhotoDetailView(isShowing: $showingDetail, scImage: selectedImage)
                             .frame(width: 300, height: 450)
                             .background(Color.white)
                             .cornerRadius(15)

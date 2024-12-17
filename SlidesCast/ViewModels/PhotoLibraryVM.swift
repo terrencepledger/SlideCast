@@ -9,7 +9,7 @@ import Photos
 import UIKit
 
 class PhotoLibraryVM: ObservableObject {
-    @Published var images: [UIImage] = []
+    @Published var scImages: [SCImage] = []
 
     func loadPhotos() {
         let status = PHPhotoLibrary.authorizationStatus()
@@ -28,7 +28,7 @@ class PhotoLibraryVM: ObservableObject {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         let assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-
+        
         assets.enumerateObjects { (asset, _, _) in
             let imageManager = PHImageManager.default()
             let targetSize = CGSize(width: 200, height: 200) // Example size
@@ -37,10 +37,17 @@ class PhotoLibraryVM: ObservableObject {
             imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options) { image, _ in
                 if let image = image {
                     DispatchQueue.main.async {
-                        self.images.append(image)
+                        let scImage = SCImage(image: image, name: asset.originalFilename)
+                        self.scImages.append(scImage)
                     }
                 }
             }
         }
+    }
+}
+
+extension PHAsset {
+    var originalFilename: String? {
+        return PHAssetResource.assetResources(for: self).first?.originalFilename
     }
 }

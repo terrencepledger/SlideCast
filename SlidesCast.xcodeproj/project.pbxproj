@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5F0FD3B3163956D2BDDEE0F0 /* Pods_SlidesCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616F4208A1693699F6812707 /* Pods_SlidesCast.framework */; };
+		762467692D10AC7100E531BD /* LocalServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762467682D10AC6B00E531BD /* LocalServer.swift */; };
+		7624676C2D10B68F00E531BD /* GCDWebServer in Frameworks */ = {isa = PBXBuildFile; productRef = 7624676B2D10B68F00E531BD /* GCDWebServer */; };
 		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
 		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
 		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
@@ -19,6 +21,7 @@
 		76D9753F2C168BFA00C2FDE3 /* PhotoLibraryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9753E2C168BFA00C2FDE3 /* PhotoLibraryVM.swift */; };
 		76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */; };
 		76D975432C1693D900C2FDE3 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D975422C1693D900C2FDE3 /* PhotoDetailView.swift */; };
+		76F0682E2D114EA200C64AC4 /* SCImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0682D2D114E9F00C64AC4 /* SCImage.swift */; };
 		B2DB23E889FD96EF465DB037 /* Pods_SlidesCastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042638890EED9C9601FE503D /* Pods_SlidesCastTests.framework */; };
 		D73E56C53F85C709C767DC2E /* Pods_SlidesCast_SlidesCastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7BEA0FA449A9F08B33C3BA /* Pods_SlidesCast_SlidesCastUITests.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,7 @@
 		4E7BEA0FA449A9F08B33C3BA /* Pods_SlidesCast_SlidesCastUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidesCast_SlidesCastUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		616F4208A1693699F6812707 /* Pods_SlidesCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidesCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F6572582DD9C401D0809C9 /* Pods-SlidesCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCast/Pods-SlidesCast.debug.xcconfig"; sourceTree = "<group>"; };
+		762467682D10AC6B00E531BD /* LocalServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServer.swift; sourceTree = "<group>"; };
 		76A99C9A2C14BE870024C791 /* SlidesCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidesCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +67,7 @@
 		76D9753E2C168BFA00C2FDE3 /* PhotoLibraryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVM.swift; sourceTree = "<group>"; };
 		76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryView.swift; sourceTree = "<group>"; };
 		76D975422C1693D900C2FDE3 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		76F0682D2D114E9F00C64AC4 /* SCImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCImage.swift; sourceTree = "<group>"; };
 		9E00F761D7FDD136D6EDDD26 /* Pods-SlidesCastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCastTests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCastTests/Pods-SlidesCastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C74927B93939E3C936E8FE49 /* Pods-SlidesCast-SlidesCastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAFA9E385AB68900A75452DE /* Pods-SlidesCast-SlidesCastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; path = "Target Support Files/Pods-SlidesCast-SlidesCastUITests/Pods-SlidesCast-SlidesCastUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F0FD3B3163956D2BDDEE0F0 /* Pods_SlidesCast.framework in Frameworks */,
+				7624676C2D10B68F00E531BD /* GCDWebServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +125,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		762467672D10AC2800E531BD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				762467682D10AC6B00E531BD /* LocalServer.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		76A99C912C14BE870024C791 = {
 			isa = PBXGroup;
 			children = (
@@ -153,11 +167,12 @@
 			isa = PBXGroup;
 			children = (
 				76D9753C2C156C9F00C2FDE3 /* Info.plist */,
+				76A99CD02C14CA900024C791 /* SlidesCastApp.swift */,
 				76D975392C153E2900C2FDE3 /* Resources */,
 				76D975382C153E1C00C2FDE3 /* Models */,
 				76D9753D2C168BC900C2FDE3 /* ViewModels */,
 				76D975372C15286900C2FDE3 /* Views */,
-				76A99CD02C14CA900024C791 /* SlidesCastApp.swift */,
+				762467672D10AC2800E531BD /* Utilities */,
 			);
 			path = SlidesCast;
 			sourceTree = "<group>";
@@ -193,6 +208,7 @@
 		76D975382C153E1C00C2FDE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76F0682D2D114E9F00C64AC4 /* SCImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +250,9 @@
 			dependencies = (
 			);
 			name = SlidesCast;
+			packageProductDependencies = (
+				7624676B2D10B68F00E531BD /* GCDWebServer */,
+			);
 			productName = SlideCast;
 			productReference = 76A99C9A2C14BE870024C791 /* SlidesCast.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +329,9 @@
 				Base,
 			);
 			mainGroup = 76A99C912C14BE870024C791;
+			packageReferences = (
+				7624676A2D10B68F00E531BD /* XCRemoteSwiftPackageReference "GCDWebServer" */,
+			);
 			productRefGroup = 76A99C9B2C14BE870024C791 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -490,8 +512,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
+				76F0682E2D114EA200C64AC4 /* SCImage.swift in Sources */,
 				76D9753F2C168BFA00C2FDE3 /* PhotoLibraryVM.swift in Sources */,
 				76D975432C1693D900C2FDE3 /* PhotoDetailView.swift in Sources */,
+				762467692D10AC7100E531BD /* LocalServer.swift in Sources */,
 				76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */,
 				76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */,
 				76A99CD92C14CA900024C791 /* ContentView.swift in Sources */,
@@ -871,6 +895,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7624676A2D10B68F00E531BD /* XCRemoteSwiftPackageReference "GCDWebServer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yene/GCDWebServer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7624676B2D10B68F00E531BD /* GCDWebServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7624676A2D10B68F00E531BD /* XCRemoteSwiftPackageReference "GCDWebServer" */;
+			productName = GCDWebServer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 76A99C922C14BE870024C791 /* Project object */;
 }

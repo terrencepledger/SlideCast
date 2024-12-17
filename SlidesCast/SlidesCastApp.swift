@@ -27,7 +27,9 @@ class SlidesCastAppDelegate: NSObject, UIApplicationDelegate, GCKLoggerDelegate 
         
         GCKCastContext.setSharedInstanceWith(options)
         GCKLogger.sharedInstance().delegate = self
-
+        
+        LocalServer.startServer()
+        
         return true
     }
 
