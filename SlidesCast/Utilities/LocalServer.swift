@@ -75,7 +75,6 @@ class LocalServer {
         
         do {
             try webServer.start(options: [GCDWebServerOption_Port: 8080])
-            print("Server started at \(webServer.serverURL?.absoluteString ?? "unknown URL").")
         } catch {
             print("Failed to start server: \(error)")
         }
