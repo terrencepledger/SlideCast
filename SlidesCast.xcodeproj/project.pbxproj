@@ -74,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F0FD3B3163956D2BDDEE0F0 /* Pods_SlidesCast.framework in Frameworks */,
+				7624676C2D10B68F00E531BD /* GCDWebServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +235,9 @@
 			dependencies = (
 			);
 			name = SlidesCast;
+			packageProductDependencies = (
+				7624676B2D10B68F00E531BD /* GCDWebServer */,
+			);
 			productName = SlideCast;
 			productReference = 76A99C9A2C14BE870024C791 /* SlidesCast.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +314,9 @@
 				Base,
 			);
 			mainGroup = 76A99C912C14BE870024C791;
+			packageReferences = (
+				7624676A2D10B68F00E531BD /* XCRemoteSwiftPackageReference "GCDWebServer" */,
+			);
 			productRefGroup = 76A99C9B2C14BE870024C791 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -871,6 +878,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7624676A2D10B68F00E531BD /* XCRemoteSwiftPackageReference "GCDWebServer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yene/GCDWebServer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7624676B2D10B68F00E531BD /* GCDWebServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7624676A2D10B68F00E531BD /* XCRemoteSwiftPackageReference "GCDWebServer" */;
+			productName = GCDWebServer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 76A99C922C14BE870024C791 /* Project object */;
 }
