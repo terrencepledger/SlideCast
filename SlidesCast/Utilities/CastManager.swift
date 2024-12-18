@@ -8,13 +8,36 @@
 import GoogleCast
 
 struct CastManager {
+    private static var logger = CastLogger()
+    private static var session: GCKSession? {
+        if let session = GCKCastContext.sharedInstance().sessionManager.currentSession {
+            return session
+        } else {
+            print("No Cast session is currently established.")
+            return nil
+        }
+    }
+    
     static var isCasting: Bool {
-        GCKCastContext.sharedInstance().sessionManager.currentSession?.connectionState == .connected
+        if let session = session {
+            return session.connectionState == .connected
+        } else {
+            return false
+        }
+    }
+    
+    static func setup() {
+        let criteria = GCKDiscoveryCriteria(applicationID: kGCKDefaultMediaReceiverApplicationID)
+        let options = GCKCastOptions(discoveryCriteria: criteria)
+        options.suspendSessionsWhenBackgrounded = false
+        
+        GCKCastContext.setSharedInstanceWith(options)
+        
+        GCKLogger.sharedInstance().delegate = logger
     }
     
     static func castPhoto(filename: String) {
-        guard let session = GCKCastContext.sharedInstance().sessionManager.currentSession else {
-            print("No Cast session is currently established.")
+        guard let session = session else {
             return
         }
         
@@ -44,6 +67,14 @@ struct CastManager {
         // Finally, build the GCKMediaInformation object
         let mediaInformation = mediaInfoBuilder.build()
         
-        session.remoteMediaClient?.loadMedia(mediaInformation)
+        Task {
+            session.remoteMediaClient?.loadMedia(mediaInformation)
+        }
+    }
+}
+
+class CastLogger: NSObject, GCKLoggerDelegate {
+    func logMessage(_ message: String, at level: GCKLoggerLevel, fromFunction function: String, location: String) {
+        print("Cast Log: \(level) - \(message) [\(function) - \(location)]")
     }
 }

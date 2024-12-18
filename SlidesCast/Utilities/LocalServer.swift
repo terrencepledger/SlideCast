@@ -74,7 +74,7 @@ class LocalServer {
         }
         
         do {
-            try webServer.start(options: [GCDWebServerOption_Port: 8080])
+            try webServer.start(options: [GCDWebServerOption_Port: 8080, "AutomaticallySuspendInBackground" : false])
         } catch {
             print("Failed to start server: \(error)")
         }
