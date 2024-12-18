@@ -15,6 +15,7 @@ struct SlideshowOverlay: View {
     @State private var isPlaying: Bool = true
     @State private var timer: Timer? = nil
     @State private var slideshowDuration: TimeInterval = 5.0 // Time for each slide (in seconds)
+    @State private var isLooping: Bool = false // Tracks whether looping is enabled
     
     var allImageDetails: [ImageDetails] // List of images for the slideshow
     
@@ -34,7 +35,7 @@ struct SlideshowOverlay: View {
                 Button("Previous") {
                     showPrevious()
                 }
-                .disabled(currentIndex == 0)
+                .disabled(currentIndex == 0 && !isLooping) // Disable if not looping
                 .padding()
 
                 Button(isPlaying ? "Pause" : "Play") {
@@ -45,10 +46,14 @@ struct SlideshowOverlay: View {
                 Button("Next") {
                     showNext()
                 }
-                .disabled(currentIndex == allImageDetails.count - 1)
+                .disabled(currentIndex == allImageDetails.count - 1 && !isLooping) // Disable if not looping
                 .padding()
             }
             .padding()
+
+            Toggle("Loop Slideshow", isOn: $isLooping)
+                .padding()
+                .toggleStyle(SwitchToggleStyle())
 
             Button("Close") {
                 stopSlideshow()
@@ -88,18 +93,22 @@ struct SlideshowOverlay: View {
     }
     
     func showNext() {
-        guard currentIndex < allImageDetails.count - 1 else {
-            stopSlideshow() // End slideshow if at the last image
-            return
+        if currentIndex < allImageDetails.count - 1 {
+            currentIndex += 1
+        } else if isLooping {
+            currentIndex = 0 // Restart if looping is enabled
+        } else {
+            stopSlideshow() // End slideshow if at the last image and not looping
         }
-        
-        currentIndex += 1
         saveCurrentImageToTempDirectory()
     }
     
     func showPrevious() {
-        guard currentIndex > 0 else { return }
-        currentIndex -= 1
+        if currentIndex > 0 {
+            currentIndex -= 1
+        } else if isLooping {
+            currentIndex = allImageDetails.count - 1 // Go to the last image if looping is enabled
+        }
         saveCurrentImageToTempDirectory()
     }
 
