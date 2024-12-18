@@ -17,13 +17,11 @@ struct SlideshowOverlay: View {
     @State private var slideshowDuration: TimeInterval = 5.0 // Default time for each slide (in seconds)
     @State private var isLooping: Bool = false // State for looping the slideshow
     
+    @State var allImageDetails: [ImageDetails] // List of images for the slideshow
     let durationOptions: [TimeInterval] = [3.0, 5.0, 10.0, 15.0] // Predefined duration choices
     
-    var allImageDetails: [ImageDetails] // List of images for the slideshow
-
     var body: some View {
         VStack {
-            // Current slide
             if !allImageDetails.isEmpty {
                 Image(uiImage: allImageDetails[currentIndex].image)
                     .resizable()
@@ -36,8 +34,7 @@ struct SlideshowOverlay: View {
             } else {
                 Text("No images available for slideshow.")
             }
-
-            // Timer and Looping Controls
+            
             HStack {
                 Text("Slide Duration:")
                 Picker("Slide Duration", selection: $slideshowDuration) {
@@ -49,45 +46,57 @@ struct SlideshowOverlay: View {
                 .onChange(of: slideshowDuration) {
                     resetTimer()
                 }
-
-                Toggle("Loop", isOn: $isLooping)
-                    .toggleStyle(SwitchToggleStyle())
-                    .padding(.leading, 20)
-                    .onChange(of: isLooping) {
-                        if isLooping, currentIndex == allImageDetails.count - 1 {
-                            resetTimer()
-                        }
-                    }
             }
-            .padding()
-
-            // Slideshow controls
+            
             HStack {
                 Button("Previous") {
                     showPrevious()
                 }
                 .disabled(!isLooping && currentIndex == 0) // Prevent if not looping
                 .padding()
-
+                
                 Button(isPlaying ? "Pause" : "Play") {
                     togglePlayPause()
                 }
                 .padding()
-
+                
                 Button("Next") {
                     showNext()
                 }
                 .disabled(!isLooping && currentIndex == allImageDetails.count - 1) // Prevent if not looping
                 .padding()
             }
-            .padding()
-
-            // Close button
-            Button("Close") {
-                stopSlideshow()
-                isShowing = false
+            
+            HStack {
+                Button(action: {
+                    shuffleSlides()
+                }) {
+                    Image(systemName: "shuffle")
+                        .font(.title2)
+                        .padding()
+                        .background(Color.blue.opacity(0.8))
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                        .shadow(radius: 5)
+                }
+                .padding()
+                
+                Button("Close") {
+                    stopSlideshow()
+                    isShowing = false
+                }
+                .foregroundColor(.red)
+                .padding()
+                
+                Toggle("Loop", isOn: $isLooping)
+                    .toggleStyle(SwitchToggleStyle())
+                    .onChange(of: isLooping) {
+                        if isLooping, currentIndex == allImageDetails.count - 1 {
+                            resetTimer()
+                        }
+                    }
+                    .fixedSize()
             }
-            .padding()
         }
         .onAppear {
             saveCurrentImageToTempDirectory()
@@ -130,7 +139,7 @@ struct SlideshowOverlay: View {
         }
         saveCurrentImageToTempDirectory()
     }
-
+    
     func showPrevious() {
         if currentIndex > 0 {
             currentIndex -= 1
@@ -139,7 +148,7 @@ struct SlideshowOverlay: View {
         }
         saveCurrentImageToTempDirectory()
     }
-
+    
     // Reset timer
     func resetTimer() {
         if isPlaying {
@@ -147,7 +156,14 @@ struct SlideshowOverlay: View {
             startSlideshow()
         }
     }
-
+    
+    // Shuffle slides
+    func shuffleSlides() {
+        allImageDetails.shuffle()
+        currentIndex = 0 // Reset to the first slide in the shuffled order
+        resetTimer()
+    }
+    
     // Save the current image to the temp directory and cast
     func saveCurrentImageToTempDirectory() {
         let tempDirectory = FileManager.default.temporaryDirectory
