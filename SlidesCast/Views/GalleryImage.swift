@@ -26,20 +26,20 @@ struct GalleryImage: View {
                         .stroke(isSelected ? Color.blue : Color.clear, lineWidth: 3)
                 )
                 .gesture(
+                    LongPressGesture(minimumDuration: 0.3)
+                        .onEnded { _ in
+                            if !isSelectionMode {
+                                onToggleSelection()
+                            }
+                        }
+                )
+                .gesture(
                     TapGesture()
                         .onEnded {
                             if isSelectionMode {
                                 onToggleSelection()
                             } else {
                                 onQuickTap()
-                            }
-                        }
-                )
-                .simultaneousGesture(
-                    LongPressGesture(minimumDuration: 0.5)
-                        .onEnded { _ in
-                            if !isSelectionMode {
-                                onToggleSelection()
                             }
                         }
                 )
