@@ -55,8 +55,8 @@ struct CastManager {
         let metadata = GCKMediaMetadata(metadataType: .photo)
         
         // Add metadata (optional, but recommended for a better user experience)
-        metadata.setString("Image Title", forKey: kGCKMetadataKeyTitle)
-        metadata.setString("A description of the image", forKey: kGCKMetadataKeySubtitle)
+        metadata.setString(filename, forKey: kGCKMetadataKeyTitle)
+        metadata.setString("Image being casted by SlidesCast", forKey: kGCKMetadataKeySubtitle)
         
         // Use the builder pattern
         let mediaInfoBuilder = GCKMediaInformationBuilder(contentURL: photoURL)
@@ -67,9 +67,7 @@ struct CastManager {
         // Finally, build the GCKMediaInformation object
         let mediaInformation = mediaInfoBuilder.build()
         
-        Task {
-            session.remoteMediaClient?.loadMedia(mediaInformation)
-        }
+        session.remoteMediaClient?.loadMedia(mediaInformation)
     }
 }
 

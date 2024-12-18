@@ -90,6 +90,7 @@ struct SlideshowOverlay: View {
             .padding()
         }
         .onAppear {
+            saveCurrentImageToTempDirectory()
             startSlideshow()
         }
         .onDisappear {
@@ -100,7 +101,6 @@ struct SlideshowOverlay: View {
     // MARK: - Slideshow Controls
     func startSlideshow() {
         guard isPlaying else { return }
-        saveCurrentImageToTempDirectory()
         timer = Timer.scheduledTimer(withTimeInterval: slideshowDuration, repeats: true) { _ in
             showNext()
         }
