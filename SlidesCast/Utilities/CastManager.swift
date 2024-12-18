@@ -22,6 +22,7 @@ struct CastManager {
             print("unable to retrieve local server address")
             return
         }
+        
         guard let photoURL = URL(string: serverURL + "/images/" + filename) else {
             print("Failed to create URL")
             return

@@ -15,6 +15,7 @@ struct PhotoGallery: View {
 
     @State private var selectedImage: ImageDetails? = nil
     @State private var selectedImages = [ImageDetails]()
+    @State private var isAllSelected = false // Tracks if all images are selected
 
     var body: some View {
         NavigationView {
@@ -26,11 +27,18 @@ struct PhotoGallery: View {
                             Button("Cancel") {
                                 isSelectionMode = false
                                 selectedImages.removeAll()
+                                isAllSelected = false // Reset Select All state
                             }
                             .foregroundColor(.red)
                             Spacer()
-                            Button("Confirm") {
+                            Button(isAllSelected ? "Deselect All" : "Select All") {
+                                toggleSelectAll()
+                            }
+                            .foregroundColor(.blue)
+                            Spacer()
+                            Button("Confirm (\(String(selectedImages.count)))") {
                                 isSelectionMode = false
+                                isAllSelected = false // Reset Select All state
                             }
                             .foregroundColor(.blue)
                         }
@@ -102,11 +110,26 @@ struct PhotoGallery: View {
         }
     }
 
+    // MARK: - Helper Functions
     private func toggleSelection(for img: ImageDetails) {
         if let index = selectedImages.firstIndex(where: { $0 == img }) {
             selectedImages.remove(at: index)
         } else {
             selectedImages.append(img)
         }
+        updateSelectAllState()
+    }
+
+    private func toggleSelectAll() {
+        if isAllSelected {
+            selectedImages.removeAll()
+        } else {
+            selectedImages = viewModel.imgDetails
+        }
+        isAllSelected.toggle()
+    }
+
+    private func updateSelectAllState() {
+        isAllSelected = selectedImages.count == viewModel.imgDetails.count
     }
 }
