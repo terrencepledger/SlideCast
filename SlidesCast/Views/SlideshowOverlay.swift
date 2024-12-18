@@ -14,13 +14,16 @@ struct SlideshowOverlay: View {
     @State private var currentIndex: Int = 0
     @State private var isPlaying: Bool = true
     @State private var timer: Timer? = nil
-    @State private var slideshowDuration: TimeInterval = 5.0 // Time for each slide (in seconds)
-    @State private var isLooping: Bool = false // Tracks whether looping is enabled
+    @State private var slideshowDuration: TimeInterval = 5.0 // Default time for each slide (in seconds)
+    @State private var isLooping: Bool = false // State for looping the slideshow
+    
+    let durationOptions: [TimeInterval] = [3.0, 5.0, 10.0, 15.0] // Predefined duration choices
     
     var allImageDetails: [ImageDetails] // List of images for the slideshow
-    
+
     var body: some View {
         VStack {
+            // Current slide
             if !allImageDetails.isEmpty {
                 Image(uiImage: allImageDetails[currentIndex].image)
                     .resizable()
@@ -28,17 +31,42 @@ struct SlideshowOverlay: View {
                     .transition(.opacity)
                     .animation(.easeInOut(duration: 0.5), value: currentIndex)
                     .onChange(of: currentIndex) {
-                        restartTimer()
+                        resetTimer()
                     }
             } else {
                 Text("No images available for slideshow.")
             }
 
+            // Timer and Looping Controls
+            HStack {
+                Text("Slide Duration:")
+                Picker("Slide Duration", selection: $slideshowDuration) {
+                    ForEach(durationOptions, id: \.self) { duration in
+                        Text("\(Int(duration)) seconds").tag(duration)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+                .onChange(of: slideshowDuration) {
+                    resetTimer()
+                }
+
+                Toggle("Loop", isOn: $isLooping)
+                    .toggleStyle(SwitchToggleStyle())
+                    .padding(.leading, 20)
+                    .onChange(of: isLooping) {
+                        if isLooping, currentIndex == allImageDetails.count - 1 {
+                            resetTimer()
+                        }
+                    }
+            }
+            .padding()
+
+            // Slideshow controls
             HStack {
                 Button("Previous") {
                     showPrevious()
                 }
-                .disabled(currentIndex == 0 && !isLooping) // Disable if not looping
+                .disabled(!isLooping && currentIndex == 0) // Prevent if not looping
                 .padding()
 
                 Button(isPlaying ? "Pause" : "Play") {
@@ -49,20 +77,12 @@ struct SlideshowOverlay: View {
                 Button("Next") {
                     showNext()
                 }
-                .disabled(currentIndex == allImageDetails.count - 1 && !isLooping) // Disable if not looping
+                .disabled(!isLooping && currentIndex == allImageDetails.count - 1) // Prevent if not looping
                 .padding()
             }
             .padding()
 
-            Toggle("Loop Slideshow", isOn: $isLooping)
-                .onChange(of: isLooping) {
-                    if isLooping, currentIndex == allImageDetails.count - 1 {
-                        restartTimer()
-                    }
-                }
-                .padding()
-                .toggleStyle(SwitchToggleStyle())
-
+            // Close button
             Button("Close") {
                 stopSlideshow()
                 isShowing = false
@@ -91,13 +111,6 @@ struct SlideshowOverlay: View {
         timer = nil
     }
     
-    func restartTimer() {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: slideshowDuration, repeats: true) { _ in
-            showNext()
-        }
-    }
-    
     func togglePlayPause() {
         isPlaying.toggle()
         if isPlaying {
@@ -111,20 +124,28 @@ struct SlideshowOverlay: View {
         if currentIndex < allImageDetails.count - 1 {
             currentIndex += 1
         } else if isLooping {
-            currentIndex = 0 // Restart if looping is enabled
+            currentIndex = 0 // Loop back to the first image
         } else {
-            stopSlideshow() // End slideshow if at the last image and not looping
+            stopSlideshow() // Stop slideshow if not looping
         }
         saveCurrentImageToTempDirectory()
     }
-    
+
     func showPrevious() {
         if currentIndex > 0 {
             currentIndex -= 1
         } else if isLooping {
-            currentIndex = allImageDetails.count - 1 // Go to the last image if looping is enabled
+            currentIndex = allImageDetails.count - 1 // Loop back to the last image
         }
         saveCurrentImageToTempDirectory()
+    }
+
+    // Reset timer
+    func resetTimer() {
+        if isPlaying {
+            stopSlideshow()
+            startSlideshow()
+        }
     }
 
     // Save the current image to the temp directory and cast
