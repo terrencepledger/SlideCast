@@ -27,6 +27,9 @@ struct SlideshowOverlay: View {
                     .scaledToFit()
                     .transition(.opacity)
                     .animation(.easeInOut(duration: 0.5), value: currentIndex)
+                    .onChange(of: currentIndex) {
+                        restartTimer()
+                    }
             } else {
                 Text("No images available for slideshow.")
             }
@@ -52,6 +55,11 @@ struct SlideshowOverlay: View {
             .padding()
 
             Toggle("Loop Slideshow", isOn: $isLooping)
+                .onChange(of: isLooping) {
+                    if isLooping, currentIndex == allImageDetails.count - 1 {
+                        restartTimer()
+                    }
+                }
                 .padding()
                 .toggleStyle(SwitchToggleStyle())
 
@@ -81,6 +89,13 @@ struct SlideshowOverlay: View {
     func stopSlideshow() {
         timer?.invalidate()
         timer = nil
+    }
+    
+    func restartTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: slideshowDuration, repeats: true) { _ in
+            showNext()
+        }
     }
     
     func togglePlayPause() {
