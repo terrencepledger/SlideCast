@@ -22,27 +22,14 @@ struct PhotoOverlay: View {
            }
            .padding()
        } .onAppear {
-           saveImageToTempDirectory()
+           sendImage()
        }
     }
     
-    func saveImageToTempDirectory() {
-        // Get the path for the Temporary directory
-        let tempDirectory = FileManager.default.temporaryDirectory
-        let imagesDirectory = tempDirectory.appendingPathComponent("images")
-        
-        if let imageData = imgDetails.image.jpegData(compressionQuality: 1.0) {
-            let imagePath = imagesDirectory.appendingPathComponent(imgDetails.filename)
-            
-            // Write the image to the Temporary directory
-            do {
-                try FileManager.default.createDirectory(at: imagesDirectory, withIntermediateDirectories: true, attributes: nil)
-                FileManager.default.createFile(atPath: imagePath.path(), contents: imageData)
-                if CastManager.isCasting {
-                    CastManager.castPhoto(filename: imgDetails.filename)
-                }
-            } catch {
-                print("Error saving image: \(error)")
+    func sendImage() {
+        Task {
+            if CastManager.isCasting, await ImageManager.saveImageToTempDirectory(imageDetails: imgDetails) {
+                CastManager.castPhoto(filename: imgDetails.filename)
             }
         }
     }

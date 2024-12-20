@@ -15,19 +15,18 @@ struct PhotoGallery: View {
 
     @State private var selectedImage: ImageDetails? = nil
     @State private var selectedImages = [ImageDetails]()
-    @State private var isAllSelected = false // Tracks if all images are selected
+    @State private var isAllSelected = false
 
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
-                    // Selection mode controls
                     if isSelectionMode {
                         HStack {
                             Button("Cancel") {
                                 isSelectionMode = false
                                 selectedImages.removeAll()
-                                isAllSelected = false // Reset Select All state
+                                isAllSelected = false
                             }
                             .foregroundColor(.red)
                             Spacer()
@@ -38,14 +37,13 @@ struct PhotoGallery: View {
                             Spacer()
                             Button("Confirm (\(String(selectedImages.count)))") {
                                 isSelectionMode = false
-                                isAllSelected = false // Reset Select All state
+                                isAllSelected = false
                             }
                             .foregroundColor(.blue)
                         }
                         .padding()
                     }
-
-                    // Grid of images
+                    
                     ScrollView {
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]) {
                             ForEach(viewModel.imgDetails) { imgDetails in
@@ -85,7 +83,7 @@ struct PhotoGallery: View {
                     SlideshowOverlay(isShowing: $showingSlideshow, allImageDetails: selectedImages)
                 }
                 
-                // Create & Show Slideshow Button
+                
                 if !isSelectionMode && !selectedImages.isEmpty {
                     VStack {
                         Spacer()
@@ -109,8 +107,7 @@ struct PhotoGallery: View {
             }
         }
     }
-
-    // MARK: - Helper Functions
+    
     private func toggleSelection(for img: ImageDetails) {
         if let index = selectedImages.firstIndex(where: { $0 == img }) {
             selectedImages.remove(at: index)
@@ -119,7 +116,7 @@ struct PhotoGallery: View {
         }
         updateSelectAllState()
     }
-
+    
     private func toggleSelectAll() {
         if isAllSelected {
             selectedImages.removeAll()
@@ -128,7 +125,7 @@ struct PhotoGallery: View {
         }
         isAllSelected.toggle()
     }
-
+    
     private func updateSelectAllState() {
         isAllSelected = selectedImages.count == viewModel.imgDetails.count
     }
