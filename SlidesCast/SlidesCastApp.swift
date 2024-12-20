@@ -10,22 +10,15 @@ import SwiftData
 import GoogleCast
 
 @main
-struct SlidesCastApp: App {
-    @UIApplicationDelegateAdaptor(SlidesCastAppDelegate.self) var appDelegate
-
+struct SlidesCastApp: App {    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    CastManager.setup()
+                    LocalServer.startServer()
+                }
         }
     }
 }
 
-class SlidesCastAppDelegate: NSObject, UIApplicationDelegate, GCKLoggerDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        CastManager.setup()
-        
-        LocalServer.startServer()
-        
-        return true
-    }
-}
