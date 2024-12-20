@@ -14,11 +14,11 @@ struct SlideshowOverlay: View {
     @State private var currentIndex: Int = 0
     @State private var isPlaying: Bool = true
     @State private var timer: Timer? = nil
-    @State private var slideshowDuration: TimeInterval = 5.0 // Default time for each slide (in seconds)
-    @State private var isLooping: Bool = false // State for looping the slideshow
+    @State private var slideshowDuration: TimeInterval = 5.0
+    @State private var isLooping: Bool = false
     
-    @State var allImageDetails: [ImageDetails] // List of images for the slideshow
-    let durationOptions: [TimeInterval] = [3.0, 5.0, 10.0, 15.0] // Predefined duration choices
+    @State var allImageDetails: [ImageDetails]
+    let durationOptions: [TimeInterval] = [3.0, 5.0, 10.0, 15.0]
     
     var body: some View {
         VStack {
@@ -52,7 +52,7 @@ struct SlideshowOverlay: View {
                 Button("Previous") {
                     showPrevious()
                 }
-                .disabled(!isLooping && currentIndex == 0) // Prevent if not looping
+                .disabled(!isLooping && currentIndex == 0)
                 .padding()
                 
                 Button(isPlaying ? "Pause" : "Play") {
@@ -63,7 +63,7 @@ struct SlideshowOverlay: View {
                 Button("Next") {
                     showNext()
                 }
-                .disabled(!isLooping && currentIndex == allImageDetails.count - 1) // Prevent if not looping
+                .disabled(!isLooping && currentIndex == allImageDetails.count - 1)
                 .padding()
             }
             
@@ -99,7 +99,7 @@ struct SlideshowOverlay: View {
             }
         }
         .onAppear {
-            saveCurrentImageToTempDirectory()
+            sendImage()
             startSlideshow()
         }
         .onDisappear {
@@ -107,7 +107,6 @@ struct SlideshowOverlay: View {
         }
     }
     
-    // MARK: - Slideshow Controls
     func startSlideshow() {
         guard isPlaying else { return }
         timer = Timer.scheduledTimer(withTimeInterval: slideshowDuration, repeats: true) { _ in
@@ -133,20 +132,20 @@ struct SlideshowOverlay: View {
         if currentIndex < allImageDetails.count - 1 {
             currentIndex += 1
         } else if isLooping {
-            currentIndex = 0 // Loop back to the first image
+            currentIndex = 0
         } else {
-            stopSlideshow() // Stop slideshow if not looping
+            stopSlideshow()
         }
-        saveCurrentImageToTempDirectory()
+        sendImage()
     }
     
     func showPrevious() {
         if currentIndex > 0 {
             currentIndex -= 1
         } else if isLooping {
-            currentIndex = allImageDetails.count - 1 // Loop back to the last image
+            currentIndex = allImageDetails.count - 1
         }
-        saveCurrentImageToTempDirectory()
+        sendImage()
     }
     
     // Reset timer
@@ -157,29 +156,18 @@ struct SlideshowOverlay: View {
         }
     }
     
-    // Shuffle slides
     func shuffleSlides() {
         allImageDetails.shuffle()
-        currentIndex = 0 // Reset to the first slide in the shuffled order
+        currentIndex = 0
         resetTimer()
     }
     
-    // Save the current image to the temp directory and cast
-    func saveCurrentImageToTempDirectory() {
-        let tempDirectory = FileManager.default.temporaryDirectory
-        let imagesDirectory = tempDirectory.appendingPathComponent("images")
-        let currentImageDetails = allImageDetails[currentIndex]
-        
-        if let imageData = currentImageDetails.image.jpegData(compressionQuality: 1.0) {
-            let imagePath = imagesDirectory.appendingPathComponent(currentImageDetails.filename)
-            do {
-                try FileManager.default.createDirectory(at: imagesDirectory, withIntermediateDirectories: true, attributes: nil)
-                FileManager.default.createFile(atPath: imagePath.path(), contents: imageData)
-                if CastManager.isCasting {
-                    CastManager.castPhoto(filename: currentImageDetails.filename)
-                }
-            } catch {
-                print("Error saving image: \(error)")
+    func sendImage() {
+        Task {
+            let currentImage = allImageDetails[currentIndex]
+            
+            if CastManager.isCasting, await ImageManager.saveImageToTempDirectory(imageDetails: currentImage) {
+                CastManager.castPhoto(filename: currentImage.filename)
             }
         }
     }
