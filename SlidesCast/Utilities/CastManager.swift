@@ -37,7 +37,7 @@ struct CastManager {
     }
     
     static func castPhoto(filename: String) {
-        guard let session = session else {
+        guard let session = session, !CastManager.isCastingImage(session: session, filename: filename) else {
             return
         }
         
@@ -51,23 +51,25 @@ struct CastManager {
             return
         }
         
-        // Create a GCKMediaMetadata object
         let metadata = GCKMediaMetadata(metadataType: .photo)
         
-        // Add metadata (optional, but recommended for a better user experience)
         metadata.setString(filename, forKey: kGCKMetadataKeyTitle)
         metadata.setString("Image being casted by SlidesCast", forKey: kGCKMetadataKeySubtitle)
         
-        // Use the builder pattern
         let mediaInfoBuilder = GCKMediaInformationBuilder(contentURL: photoURL)
-        mediaInfoBuilder.streamType = .none // For images, use .none
-        mediaInfoBuilder.contentType = "image/jpeg" // Adjust based on your image's format
+        mediaInfoBuilder.streamType = .none
+        mediaInfoBuilder.contentType = "image/jpeg"
         mediaInfoBuilder.metadata = metadata
         
-        // Finally, build the GCKMediaInformation object
         let mediaInformation = mediaInfoBuilder.build()
         
         session.remoteMediaClient?.loadMedia(mediaInformation)
+    }
+    
+    private static func isCastingImage(session: GCKSession, filename: String) -> Bool {
+        let title = session.remoteMediaClient?.mediaStatus?.mediaInformation?.metadata?.string(forKey: kGCKMetadataKeyTitle)
+        
+        return title == filename
     }
 }
 
