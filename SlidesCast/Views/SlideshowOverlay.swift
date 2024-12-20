@@ -148,7 +148,6 @@ struct SlideshowOverlay: View {
         sendImage()
     }
     
-    // Reset timer
     func resetTimer() {
         if isPlaying {
             stopSlideshow()
@@ -160,6 +159,7 @@ struct SlideshowOverlay: View {
         allImageDetails.shuffle()
         currentIndex = 0
         resetTimer()
+        sendImage()
     }
     
     func sendImage() {
