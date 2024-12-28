@@ -13,7 +13,6 @@ struct ImageManager {
     
     private static var fileManager: FileManager = FileManager.default
     
-    // Save the current image to the temp directory and cast
     static func saveImageToTempDirectory(imageDetails: ImageDetails) async -> Bool {
         guard let imageData = imageDetails.image.jpegData(compressionQuality: 1.0) else {
             print("Error retrieving image data")

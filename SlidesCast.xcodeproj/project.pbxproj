@@ -12,6 +12,7 @@
 		7624676C2D10B68F00E531BD /* GCDWebServer in Frameworks */ = {isa = PBXBuildFile; productRef = 7624676B2D10B68F00E531BD /* GCDWebServer */; };
 		767C24812D15D03E00AF40D5 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24802D15CFF800AF40D5 /* ImageManager.swift */; };
 		767C24832D1A4C1800AF40D5 /* MockFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24822D1A4C1800AF40D5 /* MockFileManager.swift */; };
+		767C24852D20BB5100AF40D5 /* LocalServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24842D20BB5100AF40D5 /* LocalServerTests.swift */; };
 		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
 		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
 		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
@@ -59,6 +60,7 @@
 		762467682D10AC6B00E531BD /* LocalServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServer.swift; sourceTree = "<group>"; };
 		767C24802D15CFF800AF40D5 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		767C24822D1A4C1800AF40D5 /* MockFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFileManager.swift; sourceTree = "<group>"; };
+		767C24842D20BB5100AF40D5 /* LocalServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServerTests.swift; sourceTree = "<group>"; };
 		76A99C9A2C14BE870024C791 /* SlidesCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidesCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				767C24822D1A4C1800AF40D5 /* MockFileManager.swift */,
+				767C24842D20BB5100AF40D5 /* LocalServerTests.swift */,
 				76A99CD22C14CA900024C791 /* ImageManagerTests.swift */,
 			);
 			path = SlidesCastTests;
@@ -551,6 +554,7 @@
 			files = (
 				76A99CE12C14CB7A0024C791 /* ImageManagerTests.swift in Sources */,
 				767C24832D1A4C1800AF40D5 /* MockFileManager.swift in Sources */,
+				767C24852D20BB5100AF40D5 /* LocalServerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
