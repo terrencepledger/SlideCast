@@ -166,7 +166,7 @@ struct SlideshowOverlay: View {
         Task {
             let currentImage = allImageDetails[currentIndex]
             
-            if CastManager.isCasting, await ImageManager.saveImageToTempDirectory(imageDetails: currentImage) {
+            if CastManager.isCasting, await ImageDirectoryManager.saveImage(currentImage) {
                 CastManager.castPhoto(filename: currentImage.filename)
             }
         }
