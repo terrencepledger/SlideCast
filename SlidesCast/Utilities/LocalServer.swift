@@ -9,9 +9,14 @@ import GCDWebServer
 import Foundation
 
 class LocalServer {
+    public static var isRunning: Bool {
+        sharedServer?.webServer.isRunning == true
+    }
     private static var sharedServer: LocalServer?
+
     private var webServer: GCDWebServer
-    
+    private var fileManager: FileManager = .default
+
     public static func startServer() {
         if sharedServer == nil {
             sharedServer = LocalServer()
@@ -22,6 +27,10 @@ class LocalServer {
         sharedServer?.webServer.stop()
         sharedServer = nil
         print("Server stopped.")
+    }
+    
+    public static func setFileManager(to fileManager: FileManager) {
+        sharedServer?.fileManager = fileManager
     }
     
     public static func getAddress() -> String? {
@@ -39,17 +48,7 @@ class LocalServer {
     }
     
     private func configureServer() {
-        let tempDirectory = FileManager.default.temporaryDirectory.appendingPathComponent("images")
-        
-        if !FileManager.default.fileExists(atPath: tempDirectory.path) {
-            do {
-                try FileManager.default.createDirectory(at: tempDirectory, withIntermediateDirectories: true)
-                print("Created temporary image directory at: \(tempDirectory.path)")
-            } catch {
-                print("Error creating temporary image directory: \(error)")
-                return
-            }
-        }
+        let tempDirectory = fileManager.temporaryDirectory.appendingPathComponent("images")
         
         webServer.addGETHandler(
             forBasePath: "/",
