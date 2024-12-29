@@ -41,7 +41,7 @@ struct CastManager {
             return
         }
         
-        guard let serverURL = LocalServer.getAddress() else {
+        guard let serverURL = LocalServerManager.getAddress() else {
             print("unable to retrieve local server address")
             return
         }

@@ -13,15 +13,15 @@ class PhotoGalleryViewModel: ObservableObject {
     @Published var isSelectionMode: Bool = false
     @Published var isAllSelected: Bool = false
     
-    private let photoLibrary: PhotoLibrary
+    private let photoLibraryManager: PhotoLibraryManager
     
-    init(photoLibrary: PhotoLibrary = PhotoLibrary()) {
-        self.photoLibrary = photoLibrary
-        self.photoLibrary.$imgDetails.assign(to: &$imgDetails)
+    init(photoLibraryManager: PhotoLibraryManager = PhotoLibraryManager()) {
+        self.photoLibraryManager = photoLibraryManager
+        self.photoLibraryManager.$imgDetails.assign(to: &$imgDetails)
     }
     
     func loadPhotos() {
-        photoLibrary.loadPhotos()
+        photoLibraryManager.loadPhotos()
     }
     
     func toggleSelection(for img: ImageDetails) {
