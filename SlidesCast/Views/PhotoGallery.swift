@@ -8,36 +8,33 @@
 import SwiftUI
 
 struct PhotoGallery: View {
-    @ObservedObject var viewModel = PhotoLibrary()
+    @StateObject private var viewModel = PhotoGalleryViewModel()
+    
     @State private var showingPhoto = false
     @State private var showingSlideshow = false
-    @State private var isSelectionMode = false
-
     @State private var selectedImage: ImageDetails? = nil
-    @State private var selectedImages = [ImageDetails]()
-    @State private var isAllSelected = false
-
+    
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
-                    if isSelectionMode {
+                    if viewModel.isSelectionMode {
                         HStack {
                             Button("Cancel") {
-                                isSelectionMode = false
-                                selectedImages.removeAll()
-                                isAllSelected = false
+                                viewModel.isSelectionMode = false
+                                viewModel.selectedImages.removeAll()
+                                viewModel.isAllSelected = false
                             }
                             .foregroundColor(.red)
                             Spacer()
-                            Button(isAllSelected ? "Deselect All" : "Select All") {
-                                toggleSelectAll()
+                            Button(viewModel.isAllSelected ? "Deselect All" : "Select All") {
+                                viewModel.toggleSelectAll()
                             }
                             .foregroundColor(.blue)
                             Spacer()
-                            Button("Confirm (\(String(selectedImages.count)))") {
-                                isSelectionMode = false
-                                isAllSelected = false
+                            Button("Confirm (\(viewModel.selectedImages.count))") {
+                                viewModel.isSelectionMode = false
+                                viewModel.isAllSelected = false
                             }
                             .foregroundColor(.blue)
                         }
@@ -49,11 +46,11 @@ struct PhotoGallery: View {
                             ForEach(viewModel.imgDetails) { imgDetails in
                                 GalleryImage(
                                     imageDetails: imgDetails,
-                                    isSelected: selectedImages.contains(imgDetails),
-                                    isSelectionMode: isSelectionMode,
+                                    isSelected: viewModel.selectedImages.contains(imgDetails),
+                                    isSelectionMode: viewModel.isSelectionMode,
                                     onToggleSelection: {
-                                        isSelectionMode = true
-                                        toggleSelection(for: imgDetails)
+                                        viewModel.isSelectionMode = true
+                                        viewModel.toggleSelection(for: imgDetails)
                                     },
                                     onQuickTap: {
                                         selectedImage = imgDetails
@@ -76,15 +73,11 @@ struct PhotoGallery: View {
                         PhotoOverlay(isShowing: $showingPhoto, imgDetails: selectedImage)
                     }
                 }
-                .sheet(isPresented: Binding(
-                    get: { showingSlideshow },
-                    set: { showingSlideshow = $0 }
-                )) {
-                    SlideshowOverlay(isShowing: $showingSlideshow, allImageDetails: selectedImages)
+                .sheet(isPresented: $showingSlideshow) {
+                    SlideshowView(isShowing: $showingSlideshow, viewModel: SlideshowViewModel(images: viewModel.selectedImages))
                 }
                 
-                
-                if !isSelectionMode && !selectedImages.isEmpty {
+                if !viewModel.isSelectionMode && !viewModel.selectedImages.isEmpty {
                     VStack {
                         Spacer()
                         HStack {
@@ -92,7 +85,7 @@ struct PhotoGallery: View {
                             Button(action: {
                                 showingSlideshow = true
                             }) {
-                                Text("Create Slideshow (\(selectedImages.count))")
+                                Text("Create Slideshow (\(viewModel.selectedImages.count))")
                                     .font(.headline)
                                     .padding()
                                     .background(Color.blue)
@@ -106,27 +99,5 @@ struct PhotoGallery: View {
                 }
             }
         }
-    }
-    
-    private func toggleSelection(for img: ImageDetails) {
-        if let index = selectedImages.firstIndex(where: { $0 == img }) {
-            selectedImages.remove(at: index)
-        } else {
-            selectedImages.append(img)
-        }
-        updateSelectAllState()
-    }
-    
-    private func toggleSelectAll() {
-        if isAllSelected {
-            selectedImages.removeAll()
-        } else {
-            selectedImages = viewModel.imgDetails
-        }
-        isAllSelected.toggle()
-    }
-    
-    private func updateSelectAllState() {
-        isAllSelected = selectedImages.count == viewModel.imgDetails.count
     }
 }

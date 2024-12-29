@@ -9,7 +9,7 @@
 import XCTest
 @testable import SlidesCast
 
-final class LocalServerTests: XCTestCase {
+final class LocalServerManagerTests: XCTestCase {
     var mockFileManager: MockFileManager!
 
     override func setUp() {
@@ -18,39 +18,39 @@ final class LocalServerTests: XCTestCase {
         mockFileManager = MockFileManager()
         
         // Inject the mock file manager into LocalServer (you would need to modify the LocalServer class to allow this)
-        LocalServer.setFileManager(to: mockFileManager)
+        LocalServerManager.setFileManager(to: mockFileManager)
     }
 
     override func tearDown() {
         super.tearDown()
-        LocalServer.stopServer()
+        LocalServerManager.stopServer()
     }
 
     func testStartServer_createsInstanceAndStartsServer() {
         // Given that the server isn't started yet
-        LocalServer.startServer()
+        LocalServerManager.startServer()
 
         // Then the shared server should be initialized and the server should be running
-        XCTAssertTrue(LocalServer.isRunning)
+        XCTAssertTrue(LocalServerManager.isRunning)
     }
 
     func testStopServer_stopsServerAndNilSharedInstance() {
         // Given that the server is running
-        LocalServer.startServer()
+        LocalServerManager.startServer()
 
         // When stopping the server
-        LocalServer.stopServer()
+        LocalServerManager.stopServer()
 
         // Then the server should stop and sharedServer should be nil
-        XCTAssertFalse(LocalServer.isRunning)
+        XCTAssertFalse(LocalServerManager.isRunning)
     }
 
     func testGetAddress_returnsServerAddress() {
         // Given that the server is running
-        LocalServer.startServer()
+        LocalServerManager.startServer()
 
         // When getting the address
-        let address = LocalServer.getAddress()
+        let address = LocalServerManager.getAddress()
 
         // Then it should return the server's address
         guard let address = address else {
@@ -62,7 +62,7 @@ final class LocalServerTests: XCTestCase {
 
     func testGetAddress_returnsNilWhenNoServer() {
         // When getting the address without starting the server
-        let address = LocalServer.getAddress()
+        let address = LocalServerManager.getAddress()
 
         // Then it should return nil
         XCTAssertNil(address)

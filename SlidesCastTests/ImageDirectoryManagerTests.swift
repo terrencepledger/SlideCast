@@ -8,7 +8,7 @@
 import XCTest
 @testable import SlidesCast
 
-final class ImageManagerTests: XCTestCase {
+final class ImageDirectoryManagerTests: XCTestCase {
     var imageDetails: ImageDetails!
     var mockFileManager: MockFileManager!
     
@@ -21,13 +21,13 @@ final class ImageManagerTests: XCTestCase {
         // Initialize the mock FileManager
         mockFileManager = MockFileManager()
         
-        ImageManager.setFileManager(to: mockFileManager) // Inject custom FileManager
+        ImageDirectoryManager.setFileManager(to: mockFileManager) // Inject custom FileManager
     }
     
     override func tearDown() {
         super.tearDown()
         
-        ImageManager.clearTempImageDirectory() // Clean up any created files
+        ImageDirectoryManager.clear() // Clean up any created files
     }
     
     func testSaveImageToTempDirectory_FailureToCreateDirectory() async {
@@ -35,7 +35,7 @@ final class ImageManagerTests: XCTestCase {
         mockFileManager.shouldFailToCreateDirectory = true
         
         // When trying to save the image
-        let result = await ImageManager.saveImageToTempDirectory(imageDetails: imageDetails)
+        let result = await ImageDirectoryManager.saveImage(imageDetails)
         
         // Then it should return false because the directory creation failed
         XCTAssertFalse(result, "The image should not be saved if the directory creation fails.")
@@ -46,7 +46,7 @@ final class ImageManagerTests: XCTestCase {
         mockFileManager.shouldFailToCreateFile = true
         
         // When trying to save the image
-        let result = await ImageManager.saveImageToTempDirectory(imageDetails: imageDetails)
+        let result = await ImageDirectoryManager.saveImage(imageDetails)
         
         // Then it should return false because the file creation failed
         XCTAssertFalse(result, "The image should not be saved if the file creation fails.")
@@ -57,7 +57,7 @@ final class ImageManagerTests: XCTestCase {
         mockFileManager.shouldFileExist = true
         
         // When trying to save the image
-        let result = await ImageManager.saveImageToTempDirectory(imageDetails: imageDetails)
+        let result = await ImageDirectoryManager.saveImage(imageDetails)
         
         // Then it should return true because the file already exists
         XCTAssertTrue(result, "The image should not be saved again if it already exists.")

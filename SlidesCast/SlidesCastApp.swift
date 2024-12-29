@@ -17,7 +17,7 @@ struct SlidesCastApp: App {
                 ContentView()
                     .onAppear {
                         CastManager.setup()
-                        LocalServer.startServer()
+                        LocalServerManager.startServer()
                     }
             }
         }
