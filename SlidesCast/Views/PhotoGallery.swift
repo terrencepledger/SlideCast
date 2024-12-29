@@ -74,7 +74,7 @@ struct PhotoGallery: View {
                     }
                 }
                 .sheet(isPresented: $showingSlideshow) {
-                    SlideshowView(isShowing: $showingSlideshow, allImageDetails: viewModel.selectedImages)
+                    SlideshowView(isShowing: $showingSlideshow, viewModel: SlideshowViewModel(images: viewModel.selectedImages))
                 }
                 
                 if !viewModel.isSelectionMode && !viewModel.selectedImages.isEmpty {

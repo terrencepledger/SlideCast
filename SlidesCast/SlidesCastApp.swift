@@ -13,12 +13,18 @@ import GoogleCast
 struct SlidesCastApp: App {    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .onAppear {
-                    CastManager.setup()
-                    LocalServerManager.startServer()
-                }
+            if isProduction {
+                ContentView()
+                    .onAppear {
+                        CastManager.setup()
+                        LocalServerManager.startServer()
+                    }
+            }
         }
+    }
+    
+    private var isProduction: Bool {
+        NSClassFromString("XCTest") == nil
     }
 }
 

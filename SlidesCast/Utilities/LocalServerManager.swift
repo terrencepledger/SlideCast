@@ -9,24 +9,30 @@ import GCDWebServer
 import Foundation
 
 class LocalServerManager {
+    public static var isRunning: Bool {
+        sharedServer?.webServer.isRunning == true
+    }
     private static var sharedServer: LocalServerManager?
-    private var webServer: GCDWebServer
 
-    // Start the server if it isn't already running
+    private var webServer: GCDWebServer
+    private var fileManager: FileManager = .default
+
     public static func startServer() {
         if sharedServer == nil {
             sharedServer = LocalServerManager()
         }
     }
-
-    // Stop the server
+    
     public static func stopServer() {
         sharedServer?.webServer.stop()
         sharedServer = nil
         print("Server stopped.")
     }
-
-    // Get the server address
+    
+    public static func setFileManager(to fileManager: FileManager) {
+        sharedServer?.fileManager = fileManager
+    }
+    
     public static func getAddress() -> String? {
         guard let server = sharedServer else {
             print("No server instance when attempting to retrieve address.")
@@ -40,23 +46,10 @@ class LocalServerManager {
         configureServer()
         start()
     }
-
-    // Configure and serve the temporary image directory
+    
     private func configureServer() {
-        let tempDirectory = FileManager.default.temporaryDirectory.appendingPathComponent("images")
+        let tempDirectory = fileManager.temporaryDirectory.appendingPathComponent("images")
         
-        // Ensure the directory exists
-        if !FileManager.default.fileExists(atPath: tempDirectory.path) {
-            do {
-                try FileManager.default.createDirectory(at: tempDirectory, withIntermediateDirectories: true)
-                print("Created temporary image directory at: \(tempDirectory.path)")
-            } catch {
-                print("Error creating temporary image directory: \(error)")
-                return
-            }
-        }
-        
-        // Add GET handler to serve files from the directory
         webServer.addGETHandler(
             forBasePath: "/",
             directoryPath: tempDirectory.path,
@@ -65,8 +58,7 @@ class LocalServerManager {
             allowRangeRequests: true
         )
     }
-
-    // Start the server
+    
     private func start() {
         if webServer.isRunning {
             print("Server is already running on port \(webServer.port). Restarting...")

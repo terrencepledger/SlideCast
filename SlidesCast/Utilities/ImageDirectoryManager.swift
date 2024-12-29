@@ -20,14 +20,13 @@ struct ImageDirectoryManager {
         }
         
         let imagePath = imagesDirectoryURL.appendingPathComponent(imageDetails.filename).path()
-        if FileManager.default.fileExists(atPath: imagePath) {
+        if fileManager.fileExists(atPath: imagePath) {
             return true
         }
         
         do {
-            try FileManager.default.createDirectory(at: imagesDirectoryURL, withIntermediateDirectories: true, attributes: nil)
-            FileManager.default.createFile(atPath: imagePath, contents: imageData)
-            return true
+            try fileManager.createDirectory(at: imagesDirectoryURL, withIntermediateDirectories: true, attributes: nil)
+            return fileManager.createFile(atPath: imagePath, contents: imageData)
         } catch {
             print("Error saving image: \(error)")
             return false

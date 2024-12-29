@@ -8,7 +8,7 @@
 import XCTest
 @testable import SlidesCast
 
-final class ImageManagerTests: XCTestCase {
+final class ImageDirectoryManagerTests: XCTestCase {
     var imageDetails: ImageDetails!
     var mockFileManager: MockFileManager!
     

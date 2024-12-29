@@ -25,8 +25,7 @@ class SlideshowViewModel: ObservableObject {
     }
 
     func startSlideshow() {
-        stopSlideshow() // Ensure no existing timer
-        guard isPlaying else { return }
+        isPlaying = true
         timer = Timer.publish(every: slideshowDuration, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
@@ -37,6 +36,7 @@ class SlideshowViewModel: ObservableObject {
     func stopSlideshow() {
         timer?.cancel()
         timer = nil
+        isPlaying = false
     }
 
     func togglePlayPause() {

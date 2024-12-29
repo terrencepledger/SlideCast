@@ -13,10 +13,9 @@ struct GalleryImage: View {
     let isSelectionMode: Bool
     let onToggleSelection: () -> Void
     let onQuickTap: () -> Void
-
+    
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            // Image display
             Image(uiImage: imageDetails.image)
                 .resizable()
                 .scaledToFit()
@@ -43,8 +42,7 @@ struct GalleryImage: View {
                             }
                         }
                 )
-
-            // Custom Checkmark overlay (visible only in selection mode)
+            
             if isSelectionMode {
                 GalleryCheckmark(isChecked: isSelected)
                     .padding(4)
