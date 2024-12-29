@@ -1,5 +1,5 @@
 //
-//  PhotoLibrary.swift
+//  PhotoLibraryManager.swift
 //  SlidesCast
 //
 //  Created by Terrence Pledger on 6/9/24.
@@ -8,7 +8,7 @@
 import Photos
 import UIKit
 
-class PhotoLibrary: ObservableObject {
+class PhotoLibraryManager: ObservableObject {
     @Published var imgDetails: [ImageDetails] = []
 
     func loadPhotos() {

@@ -28,7 +28,7 @@ struct PhotoOverlay: View {
     
     func sendImage() {
         Task {
-            if CastManager.isCasting, await ImageManager.saveImageToTempDirectory(imageDetails: imgDetails) {
+            if CastManager.isCasting, await ImageDirectoryManager.saveImage(imgDetails) {
                 CastManager.castPhoto(filename: imgDetails.filename)
             }
         }

@@ -1,5 +1,5 @@
 //
-//  LocalServer.swift
+//  LocalServerManager.swift
 //  SlidesCast
 //
 //  Created by Terrence Pledger on 12/16/24.
@@ -8,14 +8,14 @@
 import GCDWebServer
 import Foundation
 
-class LocalServer {
-    private static var sharedServer: LocalServer?
+class LocalServerManager {
+    private static var sharedServer: LocalServerManager?
     private var webServer: GCDWebServer
 
     // Start the server if it isn't already running
     public static func startServer() {
         if sharedServer == nil {
-            sharedServer = LocalServer()
+            sharedServer = LocalServerManager()
         }
     }
 

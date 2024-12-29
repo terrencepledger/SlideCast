@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct ImageManager {
+struct ImageDirectoryManager {
     private static let tempDirectory = FileManager.default.temporaryDirectory
     private static let imagesDirectoryURL = tempDirectory.appendingPathComponent("images")
     
-    // Save the current image to the temp directory and cast
-    static func saveImageToTempDirectory(imageDetails: ImageDetails) async -> Bool {
+    private static var fileManager: FileManager = FileManager.default
+    
+    static func saveImage(_ imageDetails: ImageDetails) async -> Bool {
         guard let imageData = imageDetails.image.jpegData(compressionQuality: 1.0) else {
             print("Error retrieving image data")
             return false
@@ -31,5 +32,19 @@ struct ImageManager {
             print("Error saving image: \(error)")
             return false
         }
+    }
+    
+    static func clear() {
+        if fileManager.fileExists(atPath: imagesDirectoryURL.path()) {
+            do {
+                try fileManager.removeItem(at: imagesDirectoryURL)
+            } catch {
+                print("Error clearing temp image directory: \(error)")
+            }
+        }
+    }
+    
+    static func setFileManager(to fileManager: FileManager) {
+        ImageDirectoryManager.fileManager = fileManager
     }
 }
