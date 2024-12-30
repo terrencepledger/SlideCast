@@ -12,9 +12,9 @@ struct GoogleAlbumsResponse: Decodable {
     let albums: [GoogleAlbum]
 }
 
-class GooglePhotosService {
-    private let baseURL = "https://photoslibrary.googleapis.com/v1"
-
+struct GooglePhotosService {
+    private static let baseURL = "https://photoslibrary.googleapis.com/v1"
+    
     /// Fetches the user's albums from Google Photos asynchronously.
     /// - Parameter accessToken: OAuth 2.0 access token.
     /// - Returns: An array of `GoogleAlbum` or throws an error.

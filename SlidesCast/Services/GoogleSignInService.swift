@@ -10,7 +10,7 @@ import GoogleSignIn
 
 struct GoogleSignInService {
     private static var accessToken: String?
-
+    
     static func signIn(presentingViewController: UIViewController, completion: @escaping (Result<String, Error>) -> Void) {
         GIDSignIn.sharedInstance.signIn(withPresenting: presentingViewController) { signInResult, error in
             if let error = error {
@@ -27,7 +27,7 @@ struct GoogleSignInService {
             completion(.success(accessToken))
         }
     }
-
+    
     static func getAccessToken() -> String? {
         return accessToken
     }
