@@ -1,5 +1,5 @@
 //
-//  PhotoGallery.swift
+//  PhotoGalleryView.swift
 //  SlidesCast
 //
 //  Created by Terrence Pledger on 6/9/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PhotoGallery: View {
+struct PhotoGalleryView: View {
     @StateObject private var viewModel = PhotoGalleryViewModel()
     
     @State private var showingPhoto = false
