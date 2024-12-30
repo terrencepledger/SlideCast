@@ -15,19 +15,44 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            PhotoGalleryView()
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        castButton
-                            .onAppear {
-                                GCKCastContext.sharedInstance()
-                                    .presentCastInstructionsViewControllerOnce(with: castButton.button)
-                            }
+            ZStack {
+                PhotoGalleryView()
+                
+                VStack {
+                    Spacer()
+                    
+                    HStack {
+                        Spacer()
+                        
+                        NavigationLink(destination: GoogleAlbumsView()) {
+                            Image(systemName: "photo.on.rectangle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                                .padding()
+                                .background(Color.blue.opacity(0.8))
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                                .shadow(radius: 5)
+                        }
+                        .padding()
+                        .accessibilityLabel("Open Google Albums")
                     }
                 }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    castButton
+                        .onAppear {
+                            GCKCastContext.sharedInstance()
+                                .presentCastInstructionsViewControllerOnce(with: castButton.button)
+                        }
+                }
+            }
         }
     }
 }
+
 
 #Preview {
     ContentView()

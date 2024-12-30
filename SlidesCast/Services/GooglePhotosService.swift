@@ -18,7 +18,7 @@ struct GooglePhotosService {
     /// Fetches the user's albums from Google Photos asynchronously.
     /// - Parameter accessToken: OAuth 2.0 access token.
     /// - Returns: An array of `GoogleAlbum` or throws an error.
-    func fetchAlbums(accessToken: String) async throws -> [GoogleAlbum] {
+    static func fetchAlbums(accessToken: String) async throws(GoogleAlbumServiceError) -> [GoogleAlbum] {
         let url = URL(string: "\(baseURL)/albums")!
         
         var request = URLRequest(url: url)
@@ -26,15 +26,19 @@ struct GooglePhotosService {
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         
         // Perform the network request asynchronously
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        // Validate HTTP response
-        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-            throw NSError(domain: "HTTPError", code: (response as? HTTPURLResponse)?.statusCode ?? 500, userInfo: nil)
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            // Validate HTTP response
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                throw GoogleAlbumServiceError.serviceError
+            }
+            
+            // Decode the JSON response
+            let albumsResponse = try JSONDecoder().decode(GoogleAlbumsResponse.self, from: data)
+            return albumsResponse.albums
+        } catch {
+            throw GoogleAlbumServiceError.serviceError
         }
-        
-        // Decode the JSON response
-        let albumsResponse = try JSONDecoder().decode(GoogleAlbumsResponse.self, from: data)
-        return albumsResponse.albums
     }
 }
