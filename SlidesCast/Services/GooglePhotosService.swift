@@ -25,16 +25,13 @@ struct GooglePhotosService {
         request.httpMethod = "GET"
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         
-        // Perform the network request asynchronously
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             
-            // Validate HTTP response
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 throw GoogleAlbumServiceError.serviceError
             }
             
-            // Decode the JSON response
             let albumsResponse = try JSONDecoder().decode(GoogleAlbumsResponse.self, from: data)
             return albumsResponse.albums
         } catch {
