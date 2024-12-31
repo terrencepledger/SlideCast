@@ -18,7 +18,9 @@ class GoogleAlbumViewModel: ObservableObject {
                 self.error = GoogleAlbumServiceError.accessTokenError
                 return
             }
-            self.albums = try await GooglePhotosService.fetchAlbums(accessToken: accessToken)
+            if let albums = try await GooglePhotosService.fetchAlbums(accessToken: accessToken) {
+                self.albums = albums
+            }
         } catch {
             self.error = error
         }

@@ -28,7 +28,15 @@ struct GoogleAlbumsView: View {
                 await viewModel.loadAlbums()
             }
             .onChange(of: viewModel.error) {
-                if let error = viewModel.error, error == .accessTokenError {
+                if let error = viewModel.error, error == .accessTokenError, let vc = UIViewController.topMostViewController() {
+                    Task {
+                        if let _ = try? await GoogleSignInService.signIn(presentingViewController: vc) {
+                            await viewModel.loadAlbums()
+                        } else {
+                            showError = true
+                        }
+                    }
+                } else {
                     showError = true
                 }
             }
