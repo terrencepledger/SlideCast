@@ -63,7 +63,9 @@ struct CastManager {
         
         let mediaInformation = mediaInfoBuilder.build()
         
-        session.remoteMediaClient?.loadMedia(mediaInformation)
+        Task {
+            session.remoteMediaClient?.loadMedia(mediaInformation)
+        }
     }
     
     private static func isCastingImage(session: GCKSession, filename: String) -> Bool {
