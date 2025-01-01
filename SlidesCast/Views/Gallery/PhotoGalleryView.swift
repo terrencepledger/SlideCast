@@ -66,7 +66,9 @@ struct PhotoGalleryView: View {
             .navigationTitle(album?.title ?? "Photo Gallery")
             .onAppear {
                 Task {
+                    showLoadingIndicator()
                     await viewModel.loadPhotos(from: album)
+                    hideLoadingIndicator()
                 }
             }
             .sheet(isPresented: Binding(

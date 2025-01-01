@@ -25,6 +25,22 @@ extension UIViewController {
 }
 
 extension View {
+    func withGlobalLoadingOverlay() -> some View {
+        self.modifier(GlobalLoadingModifier())
+    }
+    
+    func showLoadingIndicator(with message: String? = nil) {
+        let loadingManager = GlobalLoadingManager.shared
+        loadingManager.message = message
+        loadingManager.isLoading = true
+    }
+    
+    func hideLoadingIndicator() {
+        let loadingManager = GlobalLoadingManager.shared
+        loadingManager.isLoading = false
+        loadingManager.message = nil
+    }
+    
     func storeToolbar() -> some View {
         let castButton = CastButton()
         
