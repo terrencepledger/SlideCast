@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftUI
+import GoogleCast
 
 extension UIViewController {
     static func topMostViewController() -> UIViewController? {
@@ -21,3 +23,21 @@ extension UIViewController {
         return topController
     }
 }
+
+extension View {
+    func storeToolbar() -> some View {
+        let castButton = CastButton()
+        
+        return self
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    castButton
+                        .onAppear {
+                            GCKCastContext.sharedInstance()
+                                .presentCastInstructionsViewControllerOnce(with: castButton.button)
+                        }
+                }
+            }
+    }
+}
+

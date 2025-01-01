@@ -6,15 +6,10 @@
 //
 
 import SwiftUI
-import SwiftData
-import GoogleCast
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    let castButton = CastButton()
-
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 PhotoGalleryView()
                 
@@ -38,15 +33,6 @@ struct ContentView: View {
                         .padding()
                         .accessibilityLabel("Open Google Albums")
                     }
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    castButton
-                        .onAppear {
-                            GCKCastContext.sharedInstance()
-                                .presentCastInstructionsViewControllerOnce(with: castButton.button)
-                        }
                 }
             }
         }
