@@ -16,7 +16,18 @@
 		767C248D2D20D5CA00AF40D5 /* ImageDirectoryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C248A2D20D5CA00AF40D5 /* ImageDirectoryManagerTests.swift */; };
 		767C248E2D20D5CA00AF40D5 /* LocalServerManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C248B2D20D5CA00AF40D5 /* LocalServerManagerTests.swift */; };
 		767C248F2D20D5CA00AF40D5 /* MockFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C248C2D20D5CA00AF40D5 /* MockFileManager.swift */; };
-		767C24912D20D88A00AF40D5 /* SlideshowOverlayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24902D20D88A00AF40D5 /* SlideshowOverlayViewModelTests.swift */; };
+		767C24912D20D88A00AF40D5 /* SlideshowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24902D20D88A00AF40D5 /* SlideshowViewModelTests.swift */; };
+		767C24942D23061300AF40D5 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 767C24932D23061300AF40D5 /* GoogleSignIn */; };
+		767C24962D23061300AF40D5 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 767C24952D23061300AF40D5 /* GoogleSignInSwift */; };
+		767C24982D2306C000AF40D5 /* GoogleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24972D2306C000AF40D5 /* GoogleSignInService.swift */; };
+		767C249B2D2309FA00AF40D5 /* GooglePhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C249A2D2309FA00AF40D5 /* GooglePhotosService.swift */; };
+		767C249D2D230A5F00AF40D5 /* GoogleAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C249C2D230A5F00AF40D5 /* GoogleAlbum.swift */; };
+		767C24A02D230E9900AF40D5 /* GoogleAlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C249F2D230E9900AF40D5 /* GoogleAlbumsView.swift */; };
+		767C24A22D230ECF00AF40D5 /* GoogleAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24A12D230ECF00AF40D5 /* GoogleAlbumsViewModel.swift */; };
+		767C24A52D235BD100AF40D5 /* GooglePhotosServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24A42D235BD000AF40D5 /* GooglePhotosServiceError.swift */; };
+		767C24A92D23612200AF40D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24A82D23611D00AF40D5 /* Extensions.swift */; };
+		767C24AB2D2368FA00AF40D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767C24AA2D2368FA00AF40D5 /* GoogleService-Info.plist */; };
+		767C24AD2D23C5E900AF40D5 /* GooglePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24AC2D23C5E900AF40D5 /* GooglePhoto.swift */; };
 		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
 		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
 		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
@@ -25,7 +36,7 @@
 		76A99CE02C14CB740024C791 /* SlidesCastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CD42C14CA900024C791 /* SlidesCastUITests.swift */; };
 		76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9753A2C15455600C2FDE3 /* CastButton.swift */; };
 		76D9753F2C168BFA00C2FDE3 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9753E2C168BFA00C2FDE3 /* PhotoLibraryManager.swift */; };
-		76D975412C168C8D00C2FDE3 /* PhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D975402C168C8D00C2FDE3 /* PhotoGallery.swift */; };
+		76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */; };
 		76D975432C1693D900C2FDE3 /* PhotoOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D975422C1693D900C2FDE3 /* PhotoOverlay.swift */; };
 		76F0682E2D114EA200C64AC4 /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F0682D2D114E9F00C64AC4 /* ImageDetails.swift */; };
 		76F068322D11EEDA00C64AC4 /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F068312D11EED600C64AC4 /* GalleryImage.swift */; };
@@ -67,7 +78,16 @@
 		767C248A2D20D5CA00AF40D5 /* ImageDirectoryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDirectoryManagerTests.swift; sourceTree = "<group>"; };
 		767C248B2D20D5CA00AF40D5 /* LocalServerManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServerManagerTests.swift; sourceTree = "<group>"; };
 		767C248C2D20D5CA00AF40D5 /* MockFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFileManager.swift; sourceTree = "<group>"; };
-		767C24902D20D88A00AF40D5 /* SlideshowOverlayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowOverlayViewModelTests.swift; sourceTree = "<group>"; };
+		767C24902D20D88A00AF40D5 /* SlideshowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowViewModelTests.swift; sourceTree = "<group>"; };
+		767C24972D2306C000AF40D5 /* GoogleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInService.swift; sourceTree = "<group>"; };
+		767C249A2D2309FA00AF40D5 /* GooglePhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePhotosService.swift; sourceTree = "<group>"; };
+		767C249C2D230A5F00AF40D5 /* GoogleAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAlbum.swift; sourceTree = "<group>"; };
+		767C249F2D230E9900AF40D5 /* GoogleAlbumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAlbumsView.swift; sourceTree = "<group>"; };
+		767C24A12D230ECF00AF40D5 /* GoogleAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAlbumsViewModel.swift; sourceTree = "<group>"; };
+		767C24A42D235BD000AF40D5 /* GooglePhotosServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePhotosServiceError.swift; sourceTree = "<group>"; };
+		767C24A82D23611D00AF40D5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		767C24AA2D2368FA00AF40D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		767C24AC2D23C5E900AF40D5 /* GooglePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePhoto.swift; sourceTree = "<group>"; };
 		76A99C9A2C14BE870024C791 /* SlidesCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidesCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +101,7 @@
 		76D9753A2C15455600C2FDE3 /* CastButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastButton.swift; sourceTree = "<group>"; };
 		76D9753C2C156C9F00C2FDE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		76D9753E2C168BFA00C2FDE3 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
-		76D975402C168C8D00C2FDE3 /* PhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGallery.swift; sourceTree = "<group>"; };
+		76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryView.swift; sourceTree = "<group>"; };
 		76D975422C1693D900C2FDE3 /* PhotoOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOverlay.swift; sourceTree = "<group>"; };
 		76F0682D2D114E9F00C64AC4 /* ImageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
 		76F068312D11EED600C64AC4 /* GalleryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImage.swift; sourceTree = "<group>"; };
@@ -100,6 +120,8 @@
 			files = (
 				5F0FD3B3163956D2BDDEE0F0 /* Pods_SlidesCast.framework in Frameworks */,
 				7624676C2D10B68F00E531BD /* GCDWebServer in Frameworks */,
+				767C24942D23061300AF40D5 /* GoogleSignIn in Frameworks */,
+				767C24962D23061300AF40D5 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,12 +170,40 @@
 		762467672D10AC2800E531BD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				767C24A82D23611D00AF40D5 /* Extensions.swift */,
 				76F068352D1218CC00C64AC4 /* CastManager.swift */,
 				767C24802D15CFF800AF40D5 /* ImageDirectoryManager.swift */,
 				762467682D10AC6B00E531BD /* LocalServerManager.swift */,
 				76D9753E2C168BFA00C2FDE3 /* PhotoLibraryManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		767C24992D2309E800AF40D5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				767C249A2D2309FA00AF40D5 /* GooglePhotosService.swift */,
+				767C24972D2306C000AF40D5 /* GoogleSignInService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		767C249E2D230B2C00AF40D5 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				76F068332D11EF3C00C64AC4 /* GalleryCheckmark.swift */,
+				76F068312D11EED600C64AC4 /* GalleryImage.swift */,
+				76D975402C168C8D00C2FDE3 /* PhotoGalleryView.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		767C24A32D235BC400AF40D5 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				767C24A42D235BD000AF40D5 /* GooglePhotosServiceError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		76A99C912C14BE870024C791 = {
@@ -190,11 +240,13 @@
 			isa = PBXGroup;
 			children = (
 				76D9753C2C156C9F00C2FDE3 /* Info.plist */,
+				767C24AA2D2368FA00AF40D5 /* GoogleService-Info.plist */,
 				76A99CD02C14CA900024C791 /* SlidesCastApp.swift */,
 				76D975392C153E2900C2FDE3 /* Resources */,
 				76D975382C153E1C00C2FDE3 /* Models */,
-				76D9753D2C168BC900C2FDE3 /* ViewModels */,
 				76D975372C15286900C2FDE3 /* Views */,
+				76D9753D2C168BC900C2FDE3 /* ViewModels */,
+				767C24992D2309E800AF40D5 /* Services */,
 				762467672D10AC2800E531BD /* Utilities */,
 			);
 			path = SlidesCast;
@@ -203,8 +255,8 @@
 		76A99CD32C14CA900024C791 /* SlidesCastTests */ = {
 			isa = PBXGroup;
 			children = (
-				767C24902D20D88A00AF40D5 /* SlideshowOverlayViewModelTests.swift */,
 				767C248C2D20D5CA00AF40D5 /* MockFileManager.swift */,
+				767C24902D20D88A00AF40D5 /* SlideshowViewModelTests.swift */,
 				767C248A2D20D5CA00AF40D5 /* ImageDirectoryManagerTests.swift */,
 				767C248B2D20D5CA00AF40D5 /* LocalServerManagerTests.swift */,
 			);
@@ -223,13 +275,12 @@
 		76D975372C15286900C2FDE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				76F068372D12232100C64AC4 /* SlideshowView.swift */,
-				76F068332D11EF3C00C64AC4 /* GalleryCheckmark.swift */,
-				76F068312D11EED600C64AC4 /* GalleryImage.swift */,
-				76A99CCD2C14CA900024C791 /* ContentView.swift */,
+				767C249E2D230B2C00AF40D5 /* Gallery */,
 				76D9753A2C15455600C2FDE3 /* CastButton.swift */,
-				76D975402C168C8D00C2FDE3 /* PhotoGallery.swift */,
+				76A99CCD2C14CA900024C791 /* ContentView.swift */,
+				767C249F2D230E9900AF40D5 /* GoogleAlbumsView.swift */,
 				76D975422C1693D900C2FDE3 /* PhotoOverlay.swift */,
+				76F068372D12232100C64AC4 /* SlideshowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +288,9 @@
 		76D975382C153E1C00C2FDE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				767C24A32D235BC400AF40D5 /* Errors */,
+				767C249C2D230A5F00AF40D5 /* GoogleAlbum.swift */,
+				767C24AC2D23C5E900AF40D5 /* GooglePhoto.swift */,
 				76F0682D2D114E9F00C64AC4 /* ImageDetails.swift */,
 			);
 			path = Models;
@@ -255,8 +309,9 @@
 		76D9753D2C168BC900C2FDE3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				767C24882D20D15C00AF40D5 /* SlideshowViewModel.swift */,
+				767C24A12D230ECF00AF40D5 /* GoogleAlbumsViewModel.swift */,
 				767C24862D20C96000AF40D5 /* PhotoGalleryViewModel.swift */,
+				767C24882D20D15C00AF40D5 /* SlideshowViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -282,6 +337,8 @@
 			name = SlidesCast;
 			packageProductDependencies = (
 				7624676B2D10B68F00E531BD /* GCDWebServer */,
+				767C24932D23061300AF40D5 /* GoogleSignIn */,
+				767C24952D23061300AF40D5 /* GoogleSignInSwift */,
 			);
 			productName = SlideCast;
 			productReference = 76A99C9A2C14BE870024C791 /* SlidesCast.app */;
@@ -361,6 +418,7 @@
 			mainGroup = 76A99C912C14BE870024C791;
 			packageReferences = (
 				7624676A2D10B68F00E531BD /* XCRemoteSwiftPackageReference "GCDWebServer" */,
+				767C24922D23061300AF40D5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 76A99C9B2C14BE870024C791 /* Products */;
 			projectDirPath = "";
@@ -380,6 +438,7 @@
 			files = (
 				76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */,
 				76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */,
+				767C24AB2D2368FA00AF40D5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,20 +601,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F068342D11EF4400C64AC4 /* GalleryCheckmark.swift in Sources */,
+				767C249B2D2309FA00AF40D5 /* GooglePhotosService.swift in Sources */,
 				76F068382D12232400C64AC4 /* SlideshowView.swift in Sources */,
 				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
 				76F0682E2D114EA200C64AC4 /* ImageDetails.swift in Sources */,
+				767C24A22D230ECF00AF40D5 /* GoogleAlbumsViewModel.swift in Sources */,
 				76D9753F2C168BFA00C2FDE3 /* PhotoLibraryManager.swift in Sources */,
 				76D975432C1693D900C2FDE3 /* PhotoOverlay.swift in Sources */,
 				762467692D10AC7100E531BD /* LocalServerManager.swift in Sources */,
+				767C24A92D23612200AF40D5 /* Extensions.swift in Sources */,
 				76F068322D11EEDA00C64AC4 /* GalleryImage.swift in Sources */,
+				767C24AD2D23C5E900AF40D5 /* GooglePhoto.swift in Sources */,
+				767C24A02D230E9900AF40D5 /* GoogleAlbumsView.swift in Sources */,
 				767C24872D20C96000AF40D5 /* PhotoGalleryViewModel.swift in Sources */,
 				767C24892D20D15C00AF40D5 /* SlideshowViewModel.swift in Sources */,
 				76F068362D1218D700C64AC4 /* CastManager.swift in Sources */,
-				76D975412C168C8D00C2FDE3 /* PhotoGallery.swift in Sources */,
+				76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */,
+				767C24982D2306C000AF40D5 /* GoogleSignInService.swift in Sources */,
 				76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */,
 				76A99CD92C14CA900024C791 /* ContentView.swift in Sources */,
+				767C249D2D230A5F00AF40D5 /* GoogleAlbum.swift in Sources */,
 				767C24812D15D03E00AF40D5 /* ImageDirectoryManager.swift in Sources */,
+				767C24A52D235BD100AF40D5 /* GooglePhotosServiceError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +632,7 @@
 			files = (
 				767C248D2D20D5CA00AF40D5 /* ImageDirectoryManagerTests.swift in Sources */,
 				767C248E2D20D5CA00AF40D5 /* LocalServerManagerTests.swift in Sources */,
-				767C24912D20D88A00AF40D5 /* SlideshowOverlayViewModelTests.swift in Sources */,
+				767C24912D20D88A00AF40D5 /* SlideshowViewModelTests.swift in Sources */,
 				767C248F2D20D5CA00AF40D5 /* MockFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -945,6 +1012,14 @@
 				minimumVersion = 3.5.7;
 			};
 		};
+		767C24922D23061300AF40D5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -952,6 +1027,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7624676A2D10B68F00E531BD /* XCRemoteSwiftPackageReference "GCDWebServer" */;
 			productName = GCDWebServer;
+		};
+		767C24932D23061300AF40D5 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 767C24922D23061300AF40D5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		767C24952D23061300AF40D5 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 767C24922D23061300AF40D5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

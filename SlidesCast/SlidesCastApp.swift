@@ -18,6 +18,7 @@ struct SlidesCastApp: App {
                     .onAppear {
                         CastManager.setup()
                         LocalServerManager.startServer()
+                        GoogleSignInService.setup()
                     }
             }
         }
