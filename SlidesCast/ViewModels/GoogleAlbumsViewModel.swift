@@ -9,13 +9,13 @@ import SwiftUI
 
 @MainActor
 class GoogleAlbumViewModel: ObservableObject {
-    @Published var error: GoogleAlbumServiceError?
+    @Published var error: GooglePhotosServiceError?
     @Published var albums: [GoogleAlbum] = []
 
     func loadAlbums() async {
         do {
             guard let accessToken = GoogleSignInService.getAccessToken() else {
-                self.error = GoogleAlbumServiceError.accessTokenError
+                self.error = GooglePhotosServiceError.accessTokenError
                 return
             }
             if let albums = try await GooglePhotosService.fetchAlbums(accessToken: accessToken) {

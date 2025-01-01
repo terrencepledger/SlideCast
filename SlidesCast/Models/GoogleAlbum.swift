@@ -11,3 +11,7 @@ struct GoogleAlbum: Decodable {
     let title: String
     let productUrl: String
 }
+
+struct GoogleAlbumsResponse: Decodable {
+    let albums: [GoogleAlbum]?
+}
