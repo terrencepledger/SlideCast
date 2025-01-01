@@ -25,13 +25,17 @@ struct GoogleAlbumsView: View {
         }
         .navigationTitle("Google Albums")
         .task {
+            showLoadingIndicator()
             await viewModel.loadAlbums()
+            hideLoadingIndicator()
         }
         .onChange(of: viewModel.error) {
             if let error = viewModel.error, error == .accessTokenError, let vc = UIViewController.topMostViewController() {
                 Task {
                     if let _ = try? await GoogleSignInService.signIn(presentingViewController: vc) {
+                        showLoadingIndicator()
                         await viewModel.loadAlbums()
+                        hideLoadingIndicator()
                     } else {
                         showError = true
                     }

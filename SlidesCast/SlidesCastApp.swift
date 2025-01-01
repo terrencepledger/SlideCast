@@ -20,6 +20,7 @@ struct SlidesCastApp: App {
                         LocalServerManager.startServer()
                         GoogleSignInService.setup()
                     }
+                    .withGlobalLoadingOverlay()
             }
         }
     }
