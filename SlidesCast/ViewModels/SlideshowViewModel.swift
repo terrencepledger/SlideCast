@@ -26,6 +26,7 @@ class SlideshowViewModel: ObservableObject {
 
     func startSlideshow() {
         isPlaying = true
+        sendImage()
         timer = Timer.publish(every: slideshowDuration, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
@@ -56,7 +57,7 @@ class SlideshowViewModel: ObservableObject {
         } else {
             stopSlideshow()
         }
-        sendImage()
+        resetTimer()
     }
 
     func showPrevious() {
@@ -65,14 +66,13 @@ class SlideshowViewModel: ObservableObject {
         } else if isLooping {
             currentIndex = allImageDetails.count - 1
         }
-        sendImage()
+        resetTimer()
     }
 
     func shuffleSlides() {
         allImageDetails.shuffle()
         currentIndex = 0
         resetTimer()
-        sendImage()
     }
 
     func resetTimer() {
