@@ -87,7 +87,6 @@ struct PhotoGalleryView: View {
                 VStack {
                     Spacer()
                     HStack {
-                        Spacer()
                         Button(action: {
                             showingSlideshow = true
                         }) {
@@ -100,6 +99,8 @@ struct PhotoGalleryView: View {
                                 .shadow(radius: 5)
                         }
                         .padding()
+                        
+                        Spacer()
                     }
                 }
             }
