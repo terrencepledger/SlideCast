@@ -75,7 +75,7 @@ class PhotoGalleryViewModel: ObservableObject {
             return
         }
         
-        if let (data, response) = try? await URLSession.shared.data(from: photoURL) {
+        if let (data, _) = try? await URLSession.shared.data(from: photoURL) {
             if let img = UIImage(data: data) {
                 let details = ImageDetails(image: img, name: photo.id)
                 imgDetails.append(details)
