@@ -71,7 +71,7 @@ class SlideshowViewModel: ObservableObject {
 
     func shuffleSlides() {
         allImageDetails.shuffle()
-        currentIndex = 0
+//        currentIndex = 0
         resetTimer()
     }
 
