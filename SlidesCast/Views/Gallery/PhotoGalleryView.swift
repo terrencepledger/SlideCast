@@ -76,7 +76,7 @@ struct PhotoGalleryView: View {
                 set: { showingPhoto = $0 }
             )) {
                 if let selectedImage = selectedImage {
-                    PhotoOverlay(isShowing: $showingPhoto, imgDetails: selectedImage)
+                    PhotoView(isShowing: $showingPhoto, imgDetails: selectedImage)
                 }
             }
             .sheet(isPresented: $showingSlideshow) {
@@ -87,7 +87,6 @@ struct PhotoGalleryView: View {
                 VStack {
                     Spacer()
                     HStack {
-                        Spacer()
                         Button(action: {
                             showingSlideshow = true
                         }) {
@@ -100,6 +99,8 @@ struct PhotoGalleryView: View {
                                 .shadow(radius: 5)
                         }
                         .padding()
+                        
+                        Spacer()
                     }
                 }
             }
