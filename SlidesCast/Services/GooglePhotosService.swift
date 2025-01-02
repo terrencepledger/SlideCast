@@ -56,7 +56,6 @@ struct GooglePhotosService {
             request.httpBody = try JSONSerialization.data(withJSONObject: requestBody, options: [])
             
             let (data, response) = try await URLSession.shared.data(for: request)
-//            print(String(data: data, encoding: .utf8))
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 throw NSError(domain: "HTTPError", code: (response as? HTTPURLResponse)?.statusCode ?? 0, userInfo: nil)
             }
