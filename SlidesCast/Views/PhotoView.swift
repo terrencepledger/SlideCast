@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct PhotoOverlay: View {
+struct PhotoView: View {
     @Binding var isShowing: Bool
     var imgDetails: ImageDetails
 

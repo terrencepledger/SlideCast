@@ -76,7 +76,7 @@ struct PhotoGalleryView: View {
                 set: { showingPhoto = $0 }
             )) {
                 if let selectedImage = selectedImage {
-                    PhotoOverlay(isShowing: $showingPhoto, imgDetails: selectedImage)
+                    PhotoView(isShowing: $showingPhoto, imgDetails: selectedImage)
                 }
             }
             .sheet(isPresented: $showingSlideshow) {
