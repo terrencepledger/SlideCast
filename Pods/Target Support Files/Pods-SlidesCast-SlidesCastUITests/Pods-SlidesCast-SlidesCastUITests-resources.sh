@@ -97,15 +97,15 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/google-cast-sdk/Resources/GoogleCastCoreResources.bundle"
-  install_resource "${PODS_ROOT}/google-cast-sdk/Resources/GoogleCastUIResources.bundle"
-  install_resource "${PODS_ROOT}/google-cast-sdk/Resources/MaterialDialogs.bundle"
+  install_resource "${PODS_ROOT}/google-cast-sdk/GoogleCast.xcframework/ios-arm64/GoogleCast.framework/GoogleCastCoreResources.bundle"
+  install_resource "${PODS_ROOT}/google-cast-sdk/GoogleCast.xcframework/ios-arm64/GoogleCast.framework/GoogleCastUIResources.bundle"
+  install_resource "${PODS_ROOT}/google-cast-sdk/GoogleCast.xcframework/ios-arm64/GoogleCast.framework/MaterialDialogs.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/google-cast-sdk/GoogleCast.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/google-cast-sdk/Resources/GoogleCastCoreResources.bundle"
-  install_resource "${PODS_ROOT}/google-cast-sdk/Resources/GoogleCastUIResources.bundle"
-  install_resource "${PODS_ROOT}/google-cast-sdk/Resources/MaterialDialogs.bundle"
+  install_resource "${PODS_ROOT}/google-cast-sdk/GoogleCast.xcframework/ios-arm64/GoogleCast.framework/GoogleCastCoreResources.bundle"
+  install_resource "${PODS_ROOT}/google-cast-sdk/GoogleCast.xcframework/ios-arm64/GoogleCast.framework/GoogleCastUIResources.bundle"
+  install_resource "${PODS_ROOT}/google-cast-sdk/GoogleCast.xcframework/ios-arm64/GoogleCast.framework/MaterialDialogs.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/google-cast-sdk/GoogleCast.bundle"
 fi
 
