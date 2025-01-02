@@ -104,7 +104,7 @@ class SlideshowViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.currentIndex, 1, "Should loop back to last image")
     }
 
-    func testShuffleSlides() {
+    func testShuffleSlides_Order() {
         // Given a list of image details
         let images = [ImageDetails(image: UIImage(), name: "Image1"),
                       ImageDetails(image: UIImage(), name: "Image2"),
@@ -119,6 +119,27 @@ class SlideshowViewModelTests: XCTestCase {
         
         // Then the order of image names should no longer match the original order
         XCTAssertNotEqual(viewModel.allImageDetails.map { $0.name }, ["Image1", "Image2", "Image3", "Image4", "Image5", "Image6"], "Images should be shuffled")
+    }
+    
+    func testShuffleSlides_Index() {
+        // Given a list of image details
+        let images = [ImageDetails(image: UIImage(), name: "Image1"),
+                      ImageDetails(image: UIImage(), name: "Image2"),
+                      ImageDetails(image: UIImage(), name: "Image3"),
+                      ImageDetails(image: UIImage(), name: "Image4"),
+                      ImageDetails(image: UIImage(), name: "Image5"),
+                      ImageDetails(image: UIImage(), name: "Image6")]
+        let viewModel = SlideshowViewModel(images: images)
+        
+        // When the index is changed
+        viewModel.showNext()
+        viewModel.showNext()
+        
+        // When the slides are shuffled
+        viewModel.shuffleSlides()
+        
+        // Then the index is reset to 0
+        XCTAssertEqual(viewModel.currentIndex, 0)
     }
 }
 
