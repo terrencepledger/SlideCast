@@ -14,14 +14,14 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("Preferences")) {
-                Toggle("Enable Haptics", isOn: $hapticsEnabled)
-                
                 Picker("Appearance", selection: $appearanceMode) {
                     Text("System Default").tag("System")
                     Text("Light Mode").tag("Light")
                     Text("Dark Mode").tag("Dark")
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                
+                Toggle("Enable Haptics", isOn: $hapticsEnabled)
             }
             
             Section(header: Text("Feedback")) {
