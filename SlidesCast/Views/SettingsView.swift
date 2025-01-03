@@ -19,7 +19,8 @@ struct SettingsView: View {
                     Text("Light Mode").tag("Light")
                     Text("Dark Mode").tag("Dark")
                 }
-                .pickerStyle(SegmentedPickerStyle())
+                .pickerStyle(.segmented)
+                .padding(.top, 10)
                 
                 Toggle("Enable Haptics", isOn: $hapticsEnabled)
             }
@@ -49,4 +50,8 @@ struct SettingsView: View {
             UIApplication.shared.open(url)
         }
     }
+}
+
+#Preview {
+    SettingsView()
 }
