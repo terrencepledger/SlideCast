@@ -17,15 +17,18 @@ struct SlidesCastApp: App {
         WindowGroup {
             if isProduction {
                 ContentView()
+                    .withGlobalLoadingOverlay()
                     .onAppear {
                         updateAppearance(mode: appearanceMode)
                         CastManager.setup()
                         LocalServerManager.startServer()
                         GoogleSignInService.setup()
                     }
-                    .withGlobalLoadingOverlay()
                     .onChange(of: appearanceMode) {
                         updateAppearance(mode: appearanceMode)
+                    }
+                    .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                        HapticsManager.prepare()
                     }
             }
         }
