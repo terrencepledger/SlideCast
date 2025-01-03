@@ -18,6 +18,7 @@ struct SlidesCastApp: App {
             if isProduction {
                 ContentView()
                     .onAppear {
+                        updateAppearance(mode: appearanceMode)
                         CastManager.setup()
                         LocalServerManager.startServer()
                         GoogleSignInService.setup()
