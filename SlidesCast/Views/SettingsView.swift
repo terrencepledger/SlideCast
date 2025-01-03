@@ -21,6 +21,9 @@ struct SettingsView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding(.top, 10)
+                .onChange(of: appearanceMode) {
+                    HapticsManager.selection()
+                }
                 
                 Toggle("Enable Haptics", isOn: $hapticsEnabled)
             }
@@ -41,10 +44,14 @@ struct SettingsView: View {
                     .foregroundColor(.secondary)
             }
         }
+        .onAppear {
+            HapticsManager.prepare()
+        }
         .navigationTitle("Settings")
     }
     
     private func sendFeedback() {
+        HapticsManager.impact(style: .light)
         let feedbackSubject = "?subject=App%20Feedback"
         if let url = URL(string: AppConfig.supportEmail + feedbackSubject) {
             UIApplication.shared.open(url)

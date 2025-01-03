@@ -30,6 +30,12 @@ struct ContentView: View {
                                 .clipShape(Circle())
                                 .shadow(radius: 5)
                         }
+                        .simultaneousGesture(
+                            TapGesture()
+                                .onEnded {
+                                    HapticsManager.impact(style: .light)
+                                }
+                        )
                         .padding()
                         .accessibilityLabel("Open Google Albums")
                     }

@@ -22,6 +22,7 @@ class GoogleAlbumViewModel: ObservableObject {
                 self.albums = albums
             }
         } catch {
+            HapticsManager.notification(type: .error)
             self.error = error
         }
     }

@@ -51,6 +51,12 @@ extension View {
                         Image(systemName: "gearshape.fill")
                             .foregroundColor(.primary)
                     }
+                    .simultaneousGesture(
+                        TapGesture()
+                            .onEnded {
+                                HapticsManager.impact(style: .light)
+                            }
+                    )
                     .accessibilityLabel("Open Settings")
                 }
                 

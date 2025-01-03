@@ -40,17 +40,20 @@ struct SlideshowView: View {
             
             HStack {
                 Button("Previous") {
+                    HapticsManager.impact(style: .light)
                     viewModel.showPrevious()
                 }
                 .disabled(!viewModel.isLooping && viewModel.currentIndex == 0)
                 .padding()
                 
                 Button(viewModel.isPlaying ? "Pause" : "Play") {
+                    HapticsManager.impact(style: .light)
                     viewModel.togglePlayPause()
                 }
                 .padding()
                 
                 Button("Next") {
+                    HapticsManager.impact(style: .light)
                     viewModel.showNext()
                 }
                 .disabled(!viewModel.isLooping && viewModel.currentIndex == viewModel.allImageDetails.count - 1)
@@ -59,6 +62,7 @@ struct SlideshowView: View {
             
             HStack {
                 Button(action: {
+                    HapticsManager.impact(style: .light)
                     viewModel.shuffleSlides()
                 }) {
                     Image(systemName: "shuffle")
@@ -72,6 +76,7 @@ struct SlideshowView: View {
                 .padding()
                 
                 Button("Close") {
+                    HapticsManager.impact(style: .light)
                     viewModel.stopSlideshow()
                     isShowing = false
                 }

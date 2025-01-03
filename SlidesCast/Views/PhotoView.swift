@@ -18,6 +18,7 @@ struct PhotoView: View {
                .resizable()
                .scaledToFit()
            Button("Close") {
+               HapticsManager.impact(style: .light)
                isShowing = false
            }
            .padding()
