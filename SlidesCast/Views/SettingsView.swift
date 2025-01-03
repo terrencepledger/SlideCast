@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("hapticsEnabled") private var hapticsEnabled = true
-    @AppStorage("appearanceMode") private var appearanceMode = "System" // Can be "Light", "Dark", "System"
+    @AppStorage(AppConfig.UserDefaults.haptics) private var hapticsEnabled = true
+    @AppStorage(AppConfig.UserDefaults.appearance) private var appearanceMode: AppearanceMode = .systemDefault
     
     var body: some View {
         Form {
@@ -45,8 +45,7 @@ struct SettingsView: View {
     }
     
     private func sendFeedback() {
-        // Open an email feedback form (example implementation)
-        if let url = URL(string: "mailto:support@yourapp.com?subject=App%20Feedback") {
+        if let url = URL(string: AppConfig.supportEmail + "?subject=App%20Feedback") {
             UIApplication.shared.open(url)
         }
     }
