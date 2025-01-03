@@ -29,6 +29,7 @@
 		767C24AB2D2368FA00AF40D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767C24AA2D2368FA00AF40D5 /* GoogleService-Info.plist */; };
 		767C24AD2D23C5E900AF40D5 /* GooglePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24AC2D23C5E900AF40D5 /* GooglePhoto.swift */; };
 		767C24AF2D25E0A600AF40D5 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24AE2D25E0A600AF40D5 /* LoadingManager.swift */; };
+		767C24B12D27690400AF40D5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B02D27690400AF40D5 /* SettingsView.swift */; };
 		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
 		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
 		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
@@ -90,6 +91,7 @@
 		767C24AA2D2368FA00AF40D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		767C24AC2D23C5E900AF40D5 /* GooglePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePhoto.swift; sourceTree = "<group>"; };
 		767C24AE2D25E0A600AF40D5 /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
+		767C24B02D27690400AF40D5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		76A99C9A2C14BE870024C791 /* SlidesCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidesCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +280,7 @@
 		76D975372C15286900C2FDE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				767C24B02D27690400AF40D5 /* SettingsView.swift */,
 				767C249E2D230B2C00AF40D5 /* Gallery */,
 				76D9753A2C15455600C2FDE3 /* CastButton.swift */,
 				76A99CCD2C14CA900024C791 /* ContentView.swift */,
@@ -618,6 +621,7 @@
 				767C24AD2D23C5E900AF40D5 /* GooglePhoto.swift in Sources */,
 				767C24A02D230E9900AF40D5 /* GoogleAlbumsView.swift in Sources */,
 				767C24872D20C96000AF40D5 /* PhotoGalleryViewModel.swift in Sources */,
+				767C24B12D27690400AF40D5 /* SettingsView.swift in Sources */,
 				767C24892D20D15C00AF40D5 /* SlideshowViewModel.swift in Sources */,
 				76F068362D1218D700C64AC4 /* CastManager.swift in Sources */,
 				76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */,
