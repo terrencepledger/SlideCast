@@ -32,6 +32,7 @@
 		767C24B12D27690400AF40D5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B02D27690400AF40D5 /* SettingsView.swift */; };
 		767C24B32D28587E00AF40D5 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B22D28587B00AF40D5 /* AppConfig.swift */; };
 		767C24B52D28593800AF40D5 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B42D28592E00AF40D5 /* AppearanceMode.swift */; };
+		767C24B92D286A7A00AF40D5 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B82D286A7A00AF40D5 /* HapticsManager.swift */; };
 		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
 		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
 		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
@@ -96,6 +97,7 @@
 		767C24B02D27690400AF40D5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		767C24B22D28587B00AF40D5 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		767C24B42D28592E00AF40D5 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
+		767C24B82D286A7A00AF40D5 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		76A99C9A2C14BE870024C791 /* SlidesCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidesCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				767C24B22D28587B00AF40D5 /* AppConfig.swift */,
+				767C24B82D286A7A00AF40D5 /* HapticsManager.swift */,
 				76F068352D1218CC00C64AC4 /* CastManager.swift */,
 				767C24A82D23611D00AF40D5 /* Extensions.swift */,
 				767C24802D15CFF800AF40D5 /* ImageDirectoryManager.swift */,
@@ -615,6 +618,7 @@
 				76F068342D11EF4400C64AC4 /* GalleryCheckmark.swift in Sources */,
 				767C249B2D2309FA00AF40D5 /* GooglePhotosService.swift in Sources */,
 				76F068382D12232400C64AC4 /* SlideshowView.swift in Sources */,
+				767C24B92D286A7A00AF40D5 /* HapticsManager.swift in Sources */,
 				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
 				76F0682E2D114EA200C64AC4 /* ImageDetails.swift in Sources */,
 				767C24A22D230ECF00AF40D5 /* GoogleAlbumsViewModel.swift in Sources */,
