@@ -15,9 +15,9 @@ struct SettingsView: View {
         Form {
             Section(header: Text("Preferences")) {
                 Picker("Appearance", selection: $appearanceMode) {
-                    Text("System Default").tag("System")
-                    Text("Light Mode").tag("Light")
-                    Text("Dark Mode").tag("Dark")
+                    ForEach(AppearanceMode.allCases) { mode in
+                        Text(mode.rawValue)
+                    }
                 }
                 .pickerStyle(.segmented)
                 .padding(.top, 10)
@@ -34,8 +34,8 @@ struct SettingsView: View {
                 }
             }
             
-            Section(header: Text("Slideshow Info")) {
-                // Placeholder for future settings
+            Section(header: Text("Slideshow Overlays")) {
+                // TODO: Overlay settings
                 Text("More options coming soon!")
                     .italic()
                     .foregroundColor(.secondary)
@@ -45,7 +45,8 @@ struct SettingsView: View {
     }
     
     private func sendFeedback() {
-        if let url = URL(string: AppConfig.supportEmail + "?subject=App%20Feedback") {
+        let feedbackSubject = "?subject=App%20Feedback"
+        if let url = URL(string: AppConfig.supportEmail + feedbackSubject) {
             UIApplication.shared.open(url)
         }
     }
