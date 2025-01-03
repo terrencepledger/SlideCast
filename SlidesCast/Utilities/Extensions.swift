@@ -46,7 +46,15 @@ extension View {
         
         return self
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gearshape.fill")
+                            .foregroundColor(.primary)
+                    }
+                    .accessibilityLabel("Open Settings")
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
                     castButton
                         .onAppear {
                             GCKCastContext.sharedInstance()
