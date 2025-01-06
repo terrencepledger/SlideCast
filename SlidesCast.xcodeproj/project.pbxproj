@@ -29,6 +29,10 @@
 		767C24AB2D2368FA00AF40D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767C24AA2D2368FA00AF40D5 /* GoogleService-Info.plist */; };
 		767C24AD2D23C5E900AF40D5 /* GooglePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24AC2D23C5E900AF40D5 /* GooglePhoto.swift */; };
 		767C24AF2D25E0A600AF40D5 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24AE2D25E0A600AF40D5 /* LoadingManager.swift */; };
+		767C24B12D27690400AF40D5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B02D27690400AF40D5 /* SettingsView.swift */; };
+		767C24B32D28587E00AF40D5 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B22D28587B00AF40D5 /* AppConfig.swift */; };
+		767C24B52D28593800AF40D5 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B42D28592E00AF40D5 /* AppearanceMode.swift */; };
+		767C24B92D286A7A00AF40D5 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C24B82D286A7A00AF40D5 /* HapticsManager.swift */; };
 		76A99CD72C14CA900024C791 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCA2C14CA900024C791 /* Preview Assets.xcassets */; };
 		76A99CD82C14CA900024C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A99CCC2C14CA900024C791 /* Assets.xcassets */; };
 		76A99CD92C14CA900024C791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A99CCD2C14CA900024C791 /* ContentView.swift */; };
@@ -90,6 +94,10 @@
 		767C24AA2D2368FA00AF40D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		767C24AC2D23C5E900AF40D5 /* GooglePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePhoto.swift; sourceTree = "<group>"; };
 		767C24AE2D25E0A600AF40D5 /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
+		767C24B02D27690400AF40D5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		767C24B22D28587B00AF40D5 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		767C24B42D28592E00AF40D5 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
+		767C24B82D286A7A00AF40D5 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		76A99C9A2C14BE870024C791 /* SlidesCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidesCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CAD2C14BE8B0024C791 /* SlidesCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A99CB72C14BE8B0024C791 /* SlidesCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidesCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +180,8 @@
 		762467672D10AC2800E531BD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				767C24B22D28587B00AF40D5 /* AppConfig.swift */,
+				767C24B82D286A7A00AF40D5 /* HapticsManager.swift */,
 				76F068352D1218CC00C64AC4 /* CastManager.swift */,
 				767C24A82D23611D00AF40D5 /* Extensions.swift */,
 				767C24802D15CFF800AF40D5 /* ImageDirectoryManager.swift */,
@@ -278,6 +288,7 @@
 		76D975372C15286900C2FDE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				767C24B02D27690400AF40D5 /* SettingsView.swift */,
 				767C249E2D230B2C00AF40D5 /* Gallery */,
 				76D9753A2C15455600C2FDE3 /* CastButton.swift */,
 				76A99CCD2C14CA900024C791 /* ContentView.swift */,
@@ -292,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				767C24A32D235BC400AF40D5 /* Errors */,
+				767C24B42D28592E00AF40D5 /* AppearanceMode.swift */,
 				767C249C2D230A5F00AF40D5 /* GoogleAlbum.swift */,
 				767C24AC2D23C5E900AF40D5 /* GooglePhoto.swift */,
 				76F0682D2D114E9F00C64AC4 /* ImageDetails.swift */,
@@ -606,6 +618,7 @@
 				76F068342D11EF4400C64AC4 /* GalleryCheckmark.swift in Sources */,
 				767C249B2D2309FA00AF40D5 /* GooglePhotosService.swift in Sources */,
 				76F068382D12232400C64AC4 /* SlideshowView.swift in Sources */,
+				767C24B92D286A7A00AF40D5 /* HapticsManager.swift in Sources */,
 				76A99CDB2C14CA900024C791 /* SlidesCastApp.swift in Sources */,
 				76F0682E2D114EA200C64AC4 /* ImageDetails.swift in Sources */,
 				767C24A22D230ECF00AF40D5 /* GoogleAlbumsViewModel.swift in Sources */,
@@ -618,6 +631,7 @@
 				767C24AD2D23C5E900AF40D5 /* GooglePhoto.swift in Sources */,
 				767C24A02D230E9900AF40D5 /* GoogleAlbumsView.swift in Sources */,
 				767C24872D20C96000AF40D5 /* PhotoGalleryViewModel.swift in Sources */,
+				767C24B12D27690400AF40D5 /* SettingsView.swift in Sources */,
 				767C24892D20D15C00AF40D5 /* SlideshowViewModel.swift in Sources */,
 				76F068362D1218D700C64AC4 /* CastManager.swift in Sources */,
 				76D975412C168C8D00C2FDE3 /* PhotoGalleryView.swift in Sources */,
@@ -625,7 +639,9 @@
 				76D9753B2C15455600C2FDE3 /* CastButton.swift in Sources */,
 				76A99CD92C14CA900024C791 /* ContentView.swift in Sources */,
 				767C249D2D230A5F00AF40D5 /* GoogleAlbum.swift in Sources */,
+				767C24B32D28587E00AF40D5 /* AppConfig.swift in Sources */,
 				767C24812D15D03E00AF40D5 /* ImageDirectoryManager.swift in Sources */,
+				767C24B52D28593800AF40D5 /* AppearanceMode.swift in Sources */,
 				767C24A52D235BD100AF40D5 /* GooglePhotosServiceError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -790,10 +806,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SlidesCast/Resources/SlidesCast.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.6;
+				CURRENT_PROJECT_VERSION = 1.7;
 				DEVELOPMENT_ASSET_PATHS = "\"SlidesCast/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = T94353JL44;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -815,7 +832,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -834,10 +851,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SlidesCast/Resources/SlidesCast.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.6;
+				CURRENT_PROJECT_VERSION = 1.7;
 				DEVELOPMENT_ASSET_PATHS = "\"SlidesCast/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = T94353JL44;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -859,7 +877,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -879,12 +897,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.6;
+				CURRENT_PROJECT_VERSION = 1.7;
 				DEVELOPMENT_TEAM = T94353JL44;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCastTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -903,12 +921,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.6;
+				CURRENT_PROJECT_VERSION = 1.7;
 				DEVELOPMENT_TEAM = T94353JL44;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCastTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -926,12 +944,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.6;
+				CURRENT_PROJECT_VERSION = 1.7;
 				DEVELOPMENT_TEAM = T94353JL44;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCastUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -949,12 +967,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.6;
+				CURRENT_PROJECT_VERSION = 1.7;
 				DEVELOPMENT_TEAM = T94353JL44;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.creativespaces.SlidesCastUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

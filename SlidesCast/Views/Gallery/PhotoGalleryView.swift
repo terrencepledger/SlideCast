@@ -25,17 +25,20 @@ struct PhotoGalleryView: View {
                             viewModel.isSelectionMode = false
                             viewModel.selectedImages.removeAll()
                             viewModel.isAllSelected = false
+                            HapticsManager.impact(style: .light)
                         }
                         .foregroundColor(.red)
                         Spacer()
                         Button(viewModel.isAllSelected ? "Deselect All" : "Select All") {
                             viewModel.toggleSelectAll()
+                            HapticsManager.impact(style: .light)
                         }
                         .foregroundColor(.blue)
                         Spacer()
                         Button("Confirm (\(viewModel.selectedImages.count))") {
                             viewModel.isSelectionMode = false
                             viewModel.isAllSelected = false
+                            HapticsManager.impact(style: .light)
                         }
                         .foregroundColor(.blue)
                     }
@@ -50,10 +53,13 @@ struct PhotoGalleryView: View {
                                 isSelected: viewModel.selectedImages.contains(imgDetails),
                                 isSelectionMode: viewModel.isSelectionMode,
                                 onToggleSelection: {
+                                    HapticsManager.impact(style: .light)
                                     viewModel.isSelectionMode = true
                                     viewModel.toggleSelection(for: imgDetails)
+                                    
                                 },
                                 onQuickTap: {
+                                    HapticsManager.impact(style: .light)
                                     selectedImage = imgDetails
                                     showingPhoto = true
                                 }
@@ -89,6 +95,7 @@ struct PhotoGalleryView: View {
                     HStack {
                         Button(action: {
                             showingSlideshow = true
+                            HapticsManager.impact(style: .light)
                         }) {
                             Text("Create Slideshow (\(viewModel.selectedImages.count))")
                                 .font(.headline)

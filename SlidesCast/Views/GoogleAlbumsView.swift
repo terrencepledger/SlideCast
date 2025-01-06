@@ -31,6 +31,7 @@ struct GoogleAlbumsView: View {
         }
         .onChange(of: viewModel.error) {
             if let error = viewModel.error, error == .accessTokenError, let vc = UIViewController.topMostViewController() {
+                HapticsManager.notification(type: .warning)
                 Task {
                     if let _ = try? await GoogleSignInService.signIn(presentingViewController: vc) {
                         showLoadingIndicator()
